@@ -1,0 +1,15 @@
+import { removeUserToken } from "../../utils/storage.js";
+
+export function logOut() {
+    const logoutButton = document.querySelector("#");
+  
+    if (logoutButton) {
+      logoutButton.addEventListener("click", logoutHandler);
+    }
+  }
+  
+  function logoutHandler() {
+    removeUserToken();
+    window.location.href = "/index.html";
+  }
+  
