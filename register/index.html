@@ -6,22 +6,57 @@
     <title>Register | NextBid</title>
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <main>
-      <a href="../login/index.html">Login</a>
-      <div
-        class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
-      >
-        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <form class="space-y-4 md:space-y-6" id="registerForm">
-            <label
-              for="name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Name</label
+  <body class="font-['Roboto'] text-[#454545] bg-[#F7F7F7]">
+    <header class="p-4 font-medium">
+      <nav class="flex justify-between">
+        <ul class="flex gap-8">
+          <li>
+            <a href="./login/index.html"
+              >About Next<span class="text-[#D54B01]">Bid</span></a
             >
+          </li>
+          <li><a href="./register/index.html">Support</a></li>
+        </ul>
+        <p class="font-['Abril_Fatface'] text-4xl">
+          Next<span class="text-[#D54B01]">Bid</span>
+        </p>
+        <ul class="flex gap-8">
+          <li><a href="./login/index.html">Sign In</a></li>
+          <li><a href="./register/index.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="min-h-screen flex items-center justify-center my-20">
+      <!-- Register Form -->
+      <div class="flex gap-12 items-center">
+        <div class="relative w-full max-w-md mx-auto my-10">
+          <div
+            class="absolute top-4 left-4 w-full h-full bg-[#3b240b] z-0"
+          ></div>
+          <img
+            src="/assets/images/photo-121.jpg"
+            alt="Gallery visitor"
+            class="relative z-10 w-full"
+          />
+        </div>
+        <div class="w-full md:w-1/2 max-w-sm">
+          <h1 class="font-['Abril_Fatface'] text-3xl mb-2">Join Us</h1>
+          <p class="mb-6">
+            Create your account to start listing items and bidding on the deals
+            you don't want to miss!
+          </p>
+          <form id="registerForm">
+            <label for="name">Name</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="text"
               id="name"
               name="name"
@@ -31,7 +66,7 @@
             />
             <label for="email">Email</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="email"
               id="email"
               name="email"
@@ -42,7 +77,7 @@
             />
             <label for="password">Password</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="password"
               id="password"
               name="password"
@@ -53,7 +88,7 @@
             />
             <label for="bio">Bio</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="text"
               id="bio"
               name="bio"
@@ -61,7 +96,7 @@
             />
             <label for="avatar-url">Avatar URL</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="url"
               id="avatar-url"
               name="avatar_url"
@@ -69,7 +104,7 @@
             />
             <label for="avatar-alt">Avatar Alt Text</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="text"
               id="avatar-alt"
               name="avatar_alt"
@@ -77,7 +112,7 @@
             />
             <label for="banner-url">Banner URL</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="url"
               id="banner-url"
               name="banner_url"
@@ -85,23 +120,41 @@
             />
             <label for="banner-alt">Banner Alt Text</label>
             <input
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="text-sm block w-full p-2.5 my-2 bg-[#EBEBEB] rounded-md border-0 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#D54B01]"
               type="text"
               id="banner-alt"
               name="banner_alt"
               placeholder="Enter Banner Alt Text"
             />
             <button
-              class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              class="w-full mt-4 bg-[#D54B01] text-white hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               type="submit"
             >
-              Sign Up
+              CREATE ACCOUNT
             </button>
             <div id="message-container"></div>
           </form>
         </div>
       </div>
     </main>
+    <footer class="p-4 font-medium text-sm flex flex-col items-center gap-8">
+      <p class="font-['Abril_Fatface'] text-2xl">
+        Next<span class="text-[#D54B01]">Bid</span>
+      </p>
+      <ul class="flex justify-center gap-8">
+        <li>
+          <a href="./login/index.html"
+            >About Next<span class="text-[#D54B01]">Bid</span></a
+          >
+        </li>
+        <li><a href="./support/index.html">Support</a></li>
+        <li><a href="./terms/index.html">Terms & Conditions</a></li>
+        <li><a href="./policy/index.html">Privacy Policy</a></li>
+      </ul>
+      <p class="font-normal text-gray-400 text-xs">
+        &copy; 2023 NextBid Inc. All rights reserved.
+      </p>
+    </footer>
     <script type="module" src="../js/main.js"></script>
   </body>
 </html>

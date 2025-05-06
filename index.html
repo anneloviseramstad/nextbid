@@ -6,17 +6,30 @@
     <title>Home | NextBid</title>
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="font-['Roboto'] text-[#454545]">
     <!-- Header  -->
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./login/index.html">About NextBid</a></li>
+    <header class="p-4 font-medium">
+      <nav class="flex justify-between">
+        <ul class="flex gap-8">
+          <li>
+            <a href="./login/index.html"
+              >About Next<span class="text-[#D54B01]">Bid</span></a
+            >
+          </li>
           <li><a href="./register/index.html">Support</a></li>
         </ul>
-        <p>NextBid</p>
-        <ul>
+        <p class="font-['Abril_Fatface'] text-4xl">
+          Next<span class="text-[#D54B01]">Bid</span>
+        </p>
+        <ul class="flex gap-8">
           <li><a href="./login/index.html">Sign In</a></li>
           <li><a href="./register/index.html">Sign Up</a></li>
         </ul>
@@ -24,38 +37,97 @@
     </header>
     <main>
       <!-- Hero Section  -->
-      <div>
-        <div>
-          <p>Join The Auction Movement</p>
-          <h1>Buy. Sell. Win Big.</h1>
-          <p>
-            From rare collectibles to everyday essentials, our marketplace
-            connects sellers and buyers in real-time auctions. Create your
-            listing, browse active bids, and experience shopping like never
-            before.
-          </p>
-          <a href="./register/index.html">
-            <button>Sign Up And Place Your Bids</button>
-          </a>
-        </div>
-      </div>
-      <!-- Grid Section  -->
-      <div>
-        <h2>- Explore the Auction Floor -</h2>
-        <div>
-          <!-- Filter Section  -->
-          <div>
-            <input type="text" placeholder="Search" />
-            <input type="text" placeholder="Filter By Tags" />
+      <section class="bg-[#F7F7F7] px-20">
+        <div
+          class="flex items-center justify-between gap-8 max-w-6xl mx-auto py-12"
+        >
+          <div
+            class="w-full md:w-1/2 flex flex-col gap-2 text-center md:text-left"
+          >
+            <p class="text-[#D54B01] font-bold">Join The Auction Movement</p>
+            <h1 class="font-['Abril_Fatface'] text-4xl">Buy. Sell. Win Big.</h1>
+            <p>
+              From rare collectibles to everyday essentials, our marketplace
+              connects sellers and buyers in real-time auctions. Create your
+              listing, browse active bids, and experience shopping like never
+              before.
+            </p>
+            <a href="./register/index.html">
+              <button
+                class="bg-[#D54B01] text-white px-4 py-2 mt-2 rounded-2xl"
+              >
+                Sign Up And Place Your Bids
+              </button>
+            </a>
           </div>
-          <!-- Grid  -->
+
+          <div class="relative w-full md:w-1/2 max-w-sm my-4">
+            <div
+              class="absolute top-4 left-4 w-full h-full bg-[#3b240b] z-0"
+            ></div>
+            <img
+              src="/assets/images/photo-121.jpg"
+              alt="Gallery visitor"
+              class="relative z-10 w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Grid Section -->
+      <section class="flex flex-col items-center px-4">
+        <div class="w-full max-w-4xl">
+          <h2 class="text-center font-['Abril_Fatface'] text-xl py-8">
+            - Explore the Auction Floor -
+          </h2>
+
+          <!-- Filter Section -->
+          <div class="flex flex-col md:flex-row gap-8 justify-between mb-8">
+            <div class="flex flex-col gap-2 w-full md:w-2/3">
+              <input
+                class="bg-[#F7F7F7] py-2 px-4 rounded-lg text-sm"
+                type="text"
+                placeholder="Search"
+              />
+              <input
+                class="bg-[#F7F7F7] py-2 px-4 rounded-lg text-sm"
+                type="text"
+                placeholder="Filter By Tags"
+              />
+            </div>
+            <div class="w-full md:w-auto flex justify-end items-start">
+              <button
+                class="bg-[#D54B01] text-white text-sm font-medium py-2 px-4 rounded-lg"
+              >
+                Credits:
+              </button>
+            </div>
+          </div>
+
+          <!-- Grid -->
           <div>
-            <!-- Cards   -->
             <div>Card Here</div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="p-4 font-medium text-sm flex flex-col items-center gap-8">
+      <p class="font-['Abril_Fatface'] text-2xl">
+        Next<span class="text-[#D54B01]">Bid</span>
+      </p>
+      <ul class="flex justify-center gap-8">
+        <li>
+          <a href="./login/index.html"
+            >About Next<span class="text-[#D54B01]">Bid</span></a
+          >
+        </li>
+        <li><a href="./support/index.html">Support</a></li>
+        <li><a href="./terms/index.html">Terms & Conditions</a></li>
+        <li><a href="./policy/index.html">Privacy Policy</a></li>
+      </ul>
+      <p class="font-normal text-gray-400 text-xs">
+        &copy; 2023 NextBid Inc. All rights reserved.
+      </p>
+    </footer>
   </body>
 </html>
