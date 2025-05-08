@@ -1,7 +1,9 @@
-import { initRegister } from "./pages/initRegister.js";
-import { initLogin } from "./pages/initLogin.js";
+import { initRegister } from "./pages/auth/initRegister.js";
+import { initLogin } from "./pages/auth/initLogin.js";
+import { initHome } from "./pages/common/initHome.js";
 
 const routes = {
+  "": initHome,
   register: initRegister,
   login: initLogin,
   // legg til flere ruter her f.eks.:
@@ -18,11 +20,11 @@ export function redirectTo(path) {
 
 export function router() {
   const pathname = window.location.pathname;
-
-  const match = pathname.match(/^\/([^/]+)\/index\.html$/);
-  const page = match?.[1];
+  const page = pathname.split("/")[1]; // Tar første del av pathen som page
 
   if (page && routes[page]) {
     routes[page]();
+  } else if (pathname === "/index.html") {
+    routes[""](); // Hvis du er på index.html, kall initHome()
   }
 }

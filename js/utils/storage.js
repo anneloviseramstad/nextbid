@@ -4,13 +4,13 @@ const USERNAME = "username";
 // Store and retrieve data
 
 function storeData(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+  localStorage.setItem(key, value); // Ingen JSON.stringify() her
 }
 
+// Hent data fra localStorage
 function retrieveData(key) {
-  return JSON.parse(localStorage.getItem(key));
+  return localStorage.getItem(key); // Ingen JSON.parse() her
 }
-
 // Clear storage
 
 export function clearStorage() {

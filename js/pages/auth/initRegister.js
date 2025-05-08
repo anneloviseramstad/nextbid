@@ -1,4 +1,4 @@
-import { handleRegister } from "../ui/auth/handleRegister.js";
+import { handleRegister } from "../../ui/auth/handleRegister.js";
 
 export function initRegister() {
   const registerForm = document.querySelector("#registerForm");

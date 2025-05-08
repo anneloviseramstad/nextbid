@@ -11,18 +11,23 @@ export async function handleLogin(event) {
   const userData = Object.fromEntries(formData.entries());
 
   try {
-    const { data } = await loginUser(userData);
-    const { accessToken, name } = data;
+    // Hent data direkte fra loginUser responsen
+    const { data } = await loginUser(userData); // data kommer fra loginUser
+    console.log(data);
+    const { accessToken, name } = data; // Hent accessToken og name fra data
 
+    // Lagre token og username
     storeUserToken(accessToken);
     console.log("token stored.");
     storeUsername(name);
     console.log("username stored.");
 
     displayMessage("#message-container", "success", "Login successful.");
-
-    redirectTo("/index.html");
+    setTimeout(() => {
+      redirectTo("/index.html");
+    }, 500);
   } catch (error) {
+    // Håndter feilmeldinger
     displayMessage(
       "#message-container",
       "warning",
