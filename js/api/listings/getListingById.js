@@ -8,7 +8,7 @@ export async function getListingById(id) {
 
   try {
     const response = await fetch(
-      `${API_AUCTION_LISTINGS}?_bids=true&_seller=true`,
+      `${API_AUCTION_LISTINGS}/${id}?bids=true&_seller=true`,
       {
         headers: headers(),
       }

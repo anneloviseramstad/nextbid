@@ -7,7 +7,7 @@ const routes = {
   "": initHome,
   register: initRegister,
   login: initLogin,
-  listings: initListingPage,
+  details: initListingPage,
   // legg til flere ruter her f.eks.:
   // profile: initProfile,
   // settings: initSettings,

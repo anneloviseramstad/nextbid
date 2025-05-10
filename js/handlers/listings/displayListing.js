@@ -19,40 +19,51 @@ export async function displayListing(id) {
       return;
     }
 
+    // Sjekk om vi har noen bud i det hele tatt (selv om bids er undefined)
+    let highestBid = "No bids yet";
+    if (listing.bids && listing.bids.length > 0) {
+      highestBid = Math.max(...listing.bids.map((bid) => bid.amount));
+    }
+
     container.innerHTML = `
-        <div class="h1-secondary">
-          <h1>${listing.title}</h1>
+      <img class="mb-4 w-1/2 max-w-sm rounded-md" src="${
+        listing.media?.[0]?.url || ""
+      }" alt="${listing.media?.alt || "Listing image"}" />
+      <div class="flex flex-col gap-2">
+        <div>
+          <h1 class="font-bold text-lg">${listing.title}</h1>
+          <div class="text-xs text-gray-400 py-2">
+            <p class="text-[#D54B01]">Published by ${listing.seller?.name}</p>
+            <p>${new Date(listing.created).toLocaleString()}</p>
+          </div>
+          <p class="mb-4 text-sm">${listing.description}</p>
+          <div class="text-xs text-gray-400 py-2">
+            <p>Total bids: ${listing._count?.bids || "No bids yet"}</p>
+            <p>Ends at: ${new Date(listing.endsAt).toLocaleString()}</p>
+            <p><strong>Highest bid:</strong> ${highestBid}</p>
+          </div>
+          <div id="shareButton" class="share-icon" title="Share">
+            <i class="fa-solid fa-link"></i>
+          </div>
         </div>
-        <img class="post-id-image" src="${listing.media?.url || ""}" alt="${
-      listing.media?.alt || "Post image"
-    }" />
-        <div class="post-body">${post.body}</div>
-        <h3><strong>Author:</strong> ${listing.seller?.name || "Unknown"}</h3>
-        <h3><strong>Created:</strong> ${new Date(
-          post.created
-        ).toLocaleString()}</h3>
-        <h3><strong>Tags:</strong> ${
-          listing.wins.tags.length ? listing.wins.tags.join(", ") : "No tags"
-        }</h3>
-        <div id="shareButton" class="share-icon" title="Share">
-          <i class="fa-solid fa-link"></i>
-        </div>
-      `;
+      </div>
+    `;
+
     const shareButton = document.getElementById("shareButton");
     shareButton.addEventListener("click", () => copyShareableUrl(id));
   } catch (error) {
-    console.error("Error fetching post:", error);
+    console.error("Error fetching listing:", error);
     displayMessage(
       container,
       "danger",
-      "An error occurred while fetching the post."
+      "An error occurred while fetching the listing."
     );
   }
 }
 
-function copyShareableUrl(postId) {
+function copyShareableUrl(listingId) {
   const currentUrl = window.location.href.split("?")[0];
-  const shareableUrl = `${currentUrl}?id=${postId}`;
+  const shareableUrl = `${currentUrl}?id=${listingId}`;
 
   navigator.clipboard
     .writeText(shareableUrl)
