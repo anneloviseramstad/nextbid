@@ -1,11 +1,13 @@
 import { initRegister } from "./pages/auth/initRegister.js";
 import { initLogin } from "./pages/auth/initLogin.js";
 import { initHome } from "./pages/common/initHome.js";
+import { initListingPage } from "./pages/common/initListing.js";
 
 const routes = {
   "": initHome,
   register: initRegister,
   login: initLogin,
+  listings: initListingPage,
   // legg til flere ruter her f.eks.:
   // profile: initProfile,
   // settings: initSettings,

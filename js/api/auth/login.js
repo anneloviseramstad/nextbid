@@ -1,6 +1,7 @@
 import { AUTH_LOGIN_URL } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 import { storeUserToken } from "../../utils/storage.js";
+import { storeUsername } from "../../utils/storage.js";
 
 export async function loginUser(userDetails) {
   try {
@@ -20,6 +21,7 @@ export async function loginUser(userDetails) {
 
     const accessToken = json.data.accessToken;
     storeUserToken(accessToken);
+    storeUsername(userDetails.name);
     console.log(json);
 
     return json;

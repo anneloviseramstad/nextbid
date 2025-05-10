@@ -1,6 +1,6 @@
 import {
   isAuthenticated,
-  storeUsername,
+  retrieveUsername,
   removeUserToken,
   removeUsername,
 } from "../../utils/storage.js";
@@ -11,9 +11,9 @@ export function updateNavigation() {
   const registerLink = document.querySelector("#registerLink");
   const profileLink = document.querySelector("#profileLink");
   const usernameSpan = document.querySelector("#username");
-  const logoutButton = document.querySelector("#logoutButton");
+  const logoutButton = document.querySelector(".logout-button");
 
-  const username = storeUsername();
+  const username = retrieveUsername();
   const loggedIn = isAuthenticated();
 
   if (loggedIn) {
