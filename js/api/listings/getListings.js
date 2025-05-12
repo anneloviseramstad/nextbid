@@ -3,7 +3,6 @@ import { headers } from "../../constants/headers.js";
 
 export async function getListings() {
   try {
-    // Legg til _bids=true&_seller=true i URL-en for å hente relaterte data
     const response = await fetch(
       `${API_AUCTION_LISTINGS}?_bids=true&_seller=true`,
       {

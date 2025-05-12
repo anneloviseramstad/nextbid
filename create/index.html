@@ -17,12 +17,12 @@
   <body class="font-['Roboto'] text-[#454545]">
     <header class="p-4 font-medium bg-white shadow">
       <nav class="flex items-center justify-between relative">
-        <a
+        <p
           class="font-['Abril_Fatface'] text-3xl sm:absolute sm:left-1/2 sm:-translate-x-1/2"
-          href="../"
         >
-          <p>Next<span class="text-[#D54B01]">Bid</span></p>
-        </a>
+          Next<span class="text-[#D54B01]">Bid</span>
+        </p>
+
         <input type="checkbox" id="menu-toggle" class="hidden peer" />
         <label for="menu-toggle" class="sm:hidden cursor-pointer z-20">
           <div class="flex flex-col gap-1">
@@ -37,47 +37,96 @@
         >
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:ml-4">
             <li>
-              <a href="../login">
+              <a href="./login/index.html">
                 About Next<span class="text-[#D54B01]">Bid</span>
               </a>
             </li>
-            <li><a href="../support">Support</a></li>
+            <li><a href="./register/index.html">Support</a></li>
           </ul>
 
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:mr-4">
             <li>
-              <a id="profileLink" href="../profile" style="display: none">
+              <a
+                id="profileLink"
+                href="/account/profile.html"
+                style="display: none"
+              >
                 Welcome, <span id="username"></span>
               </a>
             </li>
             <li class="logout-button" style="display: none">
               <button id="logout-button">Logout</button>
             </li>
-            <li id="loginLink"><a href="../login">Login</a></li>
+            <li id="loginLink"><a href="./login/index.html">Login</a></li>
             <li id="registerLink">
-              <a href="../register">Register</a>
+              <a href="./register/index.html">Register</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <main class="w-full max-w-4xl mx-auto">
-      <div
-        id="listingContainer"
-        class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 my-12 mx-8"
-      ></div>
+    <main>
+      <div class="my-12">
+        <h1 class="font-['Abril_Fatface'] text-2xl text-center">
+          Create New Listing
+        </h1>
+        <form
+          class="p-4 flex flex-col gap-4 items-center text-sm font-medium mt-4"
+        >
+          <label for="title">Title</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="title"
+            name="title"
+            placeholder="What are you selling?"
+            required
+          />
+          <label for="description">Description</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Describe Your Item"
+            required
+          />
+          <label for="image">Image</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="image"
+            name="image"
+            placeholder="Image URL"
+            required
+          />
+          <label for="endsAt">Ends at</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="date"
+            id="endsAt"
+            name="endsAt"
+            required
+          />
+          <button
+            class="bg-[#D54B01] text-white p-2.5 my-2 w-full max-w-md rounded-sm"
+            type="submit"
+          >
+            CREATE LISTING
+          </button>
+        </form>
+      </div>
     </main>
-    <footer
-      class="mt-12 p-4 font-medium text-sm flex flex-col items-center gap-8"
-    >
-      <a class="font-['Abril_Fatface'] text-2xl" href="../">
-        <p>Next<span class="text-[#D54B01]">Bid</span></p>
-      </a>
-
-      <ul class="flex justify-center gap-8">
+    <footer class="p-4 font-medium text-sm flex flex-col items-center gap-8">
+      <p class="font-['Abril_Fatface'] text-2xl">
+        Next<span class="text-[#D54B01]">Bid</span>
+      </p>
+      <ul
+        class="flex flex-col md:flex-row text-center justify-center gap-4 md:gap-8"
+      >
         <li>
-          <a href="./about/index.html"
+          <a href="./login/index.html"
             >About Next<span class="text-[#D54B01]">Bid</span></a
           >
         </li>

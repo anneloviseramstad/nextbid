@@ -17,11 +17,12 @@
   <body class="font-['Roboto'] text-[#454545]">
     <header class="p-4 font-medium bg-white shadow">
       <nav class="flex items-center justify-between relative">
-        <p
+        <a
           class="font-['Abril_Fatface'] text-3xl sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+          href="./index.html"
         >
-          Next<span class="text-[#D54B01]">Bid</span>
-        </p>
+          <p>Next<span class="text-[#D54B01]">Bid</span></p>
+        </a>
 
         <input type="checkbox" id="menu-toggle" class="hidden peer" />
         <label for="menu-toggle" class="sm:hidden cursor-pointer z-20">
@@ -48,7 +49,7 @@
             <li>
               <a
                 id="profileLink"
-                href="/account/profile.html"
+                href="/profile/index.html"
                 style="display: none"
               >
                 Welcome, <span id="username"></span>
@@ -162,21 +163,21 @@
             <div
               id="listingsContainer"
               class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-4"
-            >
-              Card Here
-            </div>
+            ></div>
             <div id="message-container"></div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="p-4 font-medium text-sm flex flex-col items-center gap-8">
-      <p class="font-['Abril_Fatface'] text-2xl">
-        Next<span class="text-[#D54B01]">Bid</span>
-      </p>
+    <footer
+      class="mt-12 p-4 font-medium text-sm flex flex-col items-center gap-8"
+    >
+      <a class="font-['Abril_Fatface'] text-2xl" href="./index.html">
+        <p>Next<span class="text-[#D54B01]">Bid</span></p>
+      </a>
       <ul class="flex justify-center gap-8">
         <li>
-          <a href="./login/index.html"
+          <a href="./about/index.html"
             >About Next<span class="text-[#D54B01]">Bid</span></a
           >
         </li>
@@ -185,7 +186,7 @@
         <li><a href="./policy/index.html">Privacy Policy</a></li>
       </ul>
       <p class="font-normal text-gray-400 text-xs">
-        &copy; 2023 NextBid Inc. All rights reserved.
+        &copy; 2025 NextBid Inc. All rights reserved.
       </p>
     </footer>
     <script type="module" src="../js/main.js"></script>

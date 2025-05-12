@@ -1,7 +1,6 @@
 export function createListingElement(listing) {
   const { id, title, description, media, seller, created, bids } = listing;
 
-  // Hovedcontainer for hele kortet
   const listingElement = document.createElement("div");
   listingElement.classList.add(
     "flex",
@@ -15,11 +14,9 @@ export function createListingElement(listing) {
     "md:max-w-xl"
   );
 
-  // Wrapper for alt innhold bortsett fra knappen nederst
   const contentWrapper = document.createElement("div");
   contentWrapper.classList.add("flex", "flex-col", "flex-grow");
 
-  // Bilde
   if (media && media.length > 0) {
     const image = document.createElement("img");
     image.src = media[0].url;
@@ -28,26 +25,22 @@ export function createListingElement(listing) {
     contentWrapper.appendChild(image);
   }
 
-  // Tittel
   const heading = document.createElement("h5");
   heading.textContent = title;
   heading.classList.add("text-lg", "px-2", "font-bold", "text-[#454545]");
   contentWrapper.appendChild(heading);
 
-  // Publisert av
   const sellerInfo = document.createElement("p");
   sellerInfo.textContent = `Published by ${seller?.name || "Unknown"}`;
   sellerInfo.classList.add("text-xs", "px-2", "text-gray-400");
   contentWrapper.appendChild(sellerInfo);
 
-  // Dato publisert
   const date = document.createElement("p");
   const formattedDate = new Date(created).toLocaleDateString();
   date.textContent = `${formattedDate}`;
   date.classList.add("text-xs", "px-2", "text-gray-400", "mb-2");
   contentWrapper.appendChild(date);
 
-  // Beskrivelse
   const descriptionP = document.createElement("p");
   descriptionP.textContent = description;
   descriptionP.classList.add(
@@ -55,13 +48,12 @@ export function createListingElement(listing) {
     "px-2",
     "mb-2",
     "text-[#454545]",
-    "line-clamp-2", // viser bare 2 linjer
-    "overflow-hidden", // skjuler alt som går over
-    "text-ellipsis" // gir … hvis tekst blir kuttet
+    "line-clamp-2",
+    "overflow-hidden",
+    "text-ellipsis"
   );
   contentWrapper.appendChild(descriptionP);
 
-  // Recent bids
   const bidsHeading = document.createElement("h6");
   bidsHeading.textContent = "Recent bids:";
   bidsHeading.classList.add("font-semibold", "px-2", "mt-2", "text-sm");
@@ -95,45 +87,8 @@ export function createListingElement(listing) {
   }
   contentWrapper.appendChild(bidsContainer);
 
-  // Hype + Bid-knapp container
-  const hypeContainer = document.createElement("div");
-  hypeContainer.classList.add(
-    "flex",
-    "items-center",
-    "justify-between",
-    "px-2",
-    "mt-2",
-    "gap-2"
-  );
-
-  // Hype-tekst
-  const hype = document.createElement("p");
-  hype.textContent = "Don't miss out!";
-  hype.classList.add("text-xs", "text-gray-400");
-
-  // Bid-knapp
-  const bidButton = document.createElement("button");
-  bidButton.textContent = "Bid";
-  bidButton.classList.add(
-    "bg-[#D54B01]",
-    "text-white",
-    "px-3",
-    "py-1",
-    "rounded-lg",
-    "text-sm"
-  );
-
-  // Legg tekst og knapp inn i hype-containeren
-  hypeContainer.appendChild(hype);
-  hypeContainer.appendChild(bidButton);
-
-  // Legg hele hypeContainer i contentWrapper
-  contentWrapper.appendChild(hypeContainer);
-
-  // Legg til alt innhold før View Details-knappen
   listingElement.appendChild(contentWrapper);
 
-  // View Details-knappen helt nederst
   const detailLink = document.createElement("a");
   detailLink.href = `/details/index.html?id=${id}`;
   detailLink.textContent = "View Details";
@@ -146,6 +101,36 @@ export function createListingElement(listing) {
     "rounded-lg",
     "text-center"
   );
+
+  const hypeContainer = document.createElement("div");
+  hypeContainer.classList.add(
+    "flex",
+    "items-center",
+    "justify-between",
+    "px-2",
+    "mt-2",
+    "gap-2"
+  );
+
+  const hype = document.createElement("p");
+  hype.textContent = "Don't miss out!";
+  hype.classList.add("text-xs", "text-gray-400");
+
+  const bidButton = document.createElement("button");
+  bidButton.textContent = "Bid";
+  bidButton.classList.add(
+    "bg-[#D54B01]",
+    "text-white",
+    "px-3",
+    "py-1",
+    "rounded-lg",
+    "text-sm"
+  );
+
+  hypeContainer.appendChild(hype);
+  hypeContainer.appendChild(bidButton);
+
+  listingElement.appendChild(hypeContainer);
 
   listingElement.appendChild(detailLink);
 

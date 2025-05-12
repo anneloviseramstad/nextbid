@@ -26,18 +26,17 @@ export async function displayListing(id) {
     }
 
     container.innerHTML = `
-      <img class="mb-4 w-1/2 max-w-sm rounded-md" src="${
+      <img class="mb-4 w-1/2 max-h-96 object-cover rounded-sm rounded-md" src="${
         listing.media?.[0]?.url || ""
       }" alt="${listing.media?.alt || "Listing image"}" />
-      <div class="flex flex-col gap-2">
         <div>
-          <h1 class="font-bold text-lg">${listing.title}</h1>
+          <h1 class="font-bold text-lg md:text-2xl">${listing.title}</h1>
           <div class="text-xs text-gray-400 py-2">
             <p class="text-[#D54B01]">Published by ${listing.seller?.name}</p>
             <p>${new Date(listing.created).toLocaleString()}</p>
           </div>
-          <p class="mb-4 text-sm">${listing.description}</p>
-          <div class="text-xs text-gray-400 py-2">
+          <p class="mb-4 text-md">${listing.description}</p>
+          <div class="text-sm text-gray-400 py-2">
             <p>Total bids: ${listing._count?.bids || "No bids yet"}</p>
             <p>Ends at: ${new Date(listing.endsAt).toLocaleString()}</p>
             <p><strong>Highest bid:</strong> ${highestBid}</p>
@@ -45,7 +44,6 @@ export async function displayListing(id) {
           <div id="shareButton" class="share-icon" title="Share">
             <i class="fa-solid fa-link"></i>
           </div>
-        </div>
       </div>
     `;
 
