@@ -22,11 +22,13 @@ export function redirectTo(path) {
 
 export function router() {
   const pathname = window.location.pathname;
-  const page = pathname.split("/")[1]; // Tar første del av pathen som page
+  const page = pathname.split("/")[1];
 
-  if (page && routes[page]) {
+  if (!page || pathname === "/" || pathname === "/index.html") {
+    routes[""](); 
+  } else if (routes[page]) {
     routes[page]();
-  } else if (pathname === "/index.html") {
-    routes[""](); // Hvis du er på index.html, kall initHome()
+  } else {
+    console.warn("Ukjent rute:", pathname);
   }
 }
