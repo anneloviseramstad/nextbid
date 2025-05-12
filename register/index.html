@@ -15,36 +15,62 @@
     />
   </head>
   <body class="font-['Roboto'] text-[#454545] bg-[#F7F7F7]">
-    <header class="p-4 font-medium">
-      <nav class="flex justify-between">
-        <ul class="flex gap-8">
-          <li>
-            <a href="./login/index.html"
-              >About Next<span class="text-[#D54B01]">Bid</span></a
-            >
-          </li>
-          <li><a href="./register/index.html">Support</a></li>
-        </ul>
-        <p class="font-['Abril_Fatface'] text-4xl">
-          Next<span class="text-[#D54B01]">Bid</span>
-        </p>
-        <ul class="flex gap-8">
-          <li><a href="./login/index.html">Sign In</a></li>
-          <li><a href="./register/index.html">Sign Up</a></li>
-        </ul>
+    <header class="p-4 font-medium bg-white shadow">
+      <nav class="flex items-center justify-between relative">
+        <a
+          class="font-['Abril_Fatface'] text-3xl sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+          href="../"
+        >
+          <p>Next<span class="text-[#D54B01]">Bid</span></p>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label for="menu-toggle" class="sm:hidden cursor-pointer z-20">
+          <div class="flex flex-col gap-1">
+            <span class="w-6 h-0.5 bg-black"></span>
+            <span class="w-6 h-0.5 bg-black"></span>
+            <span class="w-6 h-0.5 bg-black"></span>
+          </div>
+        </label>
+
+        <div
+          class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex sm:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
+        >
+          <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:ml-4">
+            <li>
+              <a href="../about">
+                About Next<span class="text-[#D54B01]">Bid</span>
+              </a>
+            </li>
+            <li><a href="../support">Support</a></li>
+          </ul>
+
+          <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:mr-4">
+            <li>
+              <a id="profileLink" href="../profile" style="display: none">
+                Welcome, <span id="username"></span>
+              </a>
+            </li>
+            <li class="logout-button" style="display: none">
+              <button id="logout-button">Logout</button>
+            </li>
+            <li id="loginLink"><a href="../login">Login</a></li>
+            <li id="registerLink">
+              <a href="../register">Register</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
-    <main class="min-h-screen flex items-center justify-center my-20">
+    <main class="flex items-center justify-center mt-20">
       <!-- Register Form -->
-      <div class="flex gap-12 items-center">
-        <div class="relative w-full max-w-md mx-auto my-10">
-          <div
-            class="absolute top-4 left-4 w-full h-full bg-[#3b240b] z-0"
-          ></div>
+      <div class="flex flex-col md:flex-row gap-12 items-center mx-4">
+        <div class="hidden md:block relative max-w-md mx-auto my-20">
+          <div class="absolute top-4 left-4 w-80 h-full bg-[#3b240b] z-0"></div>
           <img
             src="/assets/images/photo-121.jpg"
             alt="Gallery visitor"
-            class="relative z-10 w-full"
+            class="relative z-10 w-80"
           />
         </div>
         <div class="w-full md:w-1/2 max-w-sm">
@@ -137,22 +163,25 @@
         </div>
       </div>
     </main>
-    <footer class="p-4 font-medium text-sm flex flex-col items-center gap-8">
-      <p class="font-['Abril_Fatface'] text-2xl">
-        Next<span class="text-[#D54B01]">Bid</span>
-      </p>
-      <ul class="flex justify-center gap-8">
+    <footer
+      class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8"
+    >
+      <a class="font-['Abril_Fatface'] text-3xl" href="./">
+        <p>Next<span class="text-[#D54B01]">Bid</span></p>
+      </a>
+
+      <ul class="flex flex-col sm:flex-row justify-center gap-8 text-center">
         <li>
-          <a href="./login/index.html"
+          <a href="../about"
             >About Next<span class="text-[#D54B01]">Bid</span></a
           >
         </li>
-        <li><a href="./support/index.html">Support</a></li>
-        <li><a href="./terms/index.html">Terms & Conditions</a></li>
-        <li><a href="./policy/index.html">Privacy Policy</a></li>
+        <li><a href="../support">Support</a></li>
+        <li><a href="../terms">Terms & Conditions</a></li>
+        <li><a href="../policy">Privacy Policy</a></li>
       </ul>
       <p class="font-normal text-gray-400 text-xs">
-        &copy; 2023 NextBid Inc. All rights reserved.
+        &copy; 2025 NextBid Inc. All rights reserved.
       </p>
     </footer>
     <script type="module" src="../js/main.js"></script>
