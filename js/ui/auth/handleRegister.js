@@ -1,6 +1,5 @@
 import { registerUser } from "../../api/auth/register.js";
 import { displayMessage } from "../common/displayMessage.js";
-import { redirectTo } from "../../router.js";
 
 export async function handleRegister(event) {
   event.preventDefault();
@@ -41,7 +40,7 @@ export async function handleRegister(event) {
       "Registration successful. Please log in."
     );
     form.reset();
-    redirectTo("/login");
+    window.location.href = "/login.html";
   } catch (error) {
     displayMessage("#message-container", "warning", error.message);
   }

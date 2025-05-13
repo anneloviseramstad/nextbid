@@ -1,45 +1,44 @@
 import { createListing } from "../../api/listings/createListing.js";
+import { displayMessage } from "../../ui/common/displayMessage.js";
 
 export async function createListingHandler(event) {
   event.preventDefault();
 
   const form = event.target;
   const formData = new FormData(form);
-
   const formFields = Object.fromEntries(formData);
-  console.log(formFields);
 
+  // ✅ Trim og split tags til array
+  const tagsArray = formFields.tags
+    ? formFields.tags
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+    : [];
+
+  // ✅ Lag dataobjektet i riktig format
   const data = {
-    name: formFields.name,
-    email: formFields.email,
-    password: formFields.password,
-    bio: formFields.bio,
+    title: formFields.title.trim(),
+    description: formFields.description.trim(),
+    endsAt: new Date(formFields.endsAt).toISOString(),
+    tags: tagsArray,
+    media: formFields.image
+      ? [{ url: formFields.image.trim(), alt: formFields.title.trim() }]
+      : [],
   };
 
-  if (formFields.avatar_url) {
-    data.avatar = {
-      url: formFields.avatar_url,
-      alt: formFields.avatar_alt || "",
-    };
-  }
-
-  // Bare legg til banner hvis det faktisk er oppgitt en URL
-  if (formFields.banner_url) {
-    data.banner = {
-      url: formFields.banner_url,
-      alt: formFields.banner_alt || "",
-    };
-  }
+  console.log("Posting listing with data:", data);
 
   try {
     await createListing(data);
     displayMessage(
       "#message-container",
       "success",
-      "Registration successful. Please log in."
+      "Listing created successfully!"
     );
-    form.reset();
-    redirectTo("/");
+    // Optional redirect
+    // form.reset();
+    // window.location.href = "/index.html";
   } catch (error) {
     displayMessage("#message-container", "warning", error.message);
   }

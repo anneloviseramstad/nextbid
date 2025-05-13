@@ -3,12 +3,9 @@ import { headers } from "../../constants/headers.js";
 
 export async function getListings() {
   try {
-    const response = await fetch(
-      `${API_AUCTION_LISTINGS}?_bids=true&_seller=true`,
-      {
-        headers: headers(),
-      }
-    );
+    const response = await fetch(API_AUCTION_LISTINGS, {
+      headers: headers(),
+    });
 
     const data = await response.json();
 
@@ -16,11 +13,11 @@ export async function getListings() {
       throw new Error(data.errors?.[0]?.message || "Unknown error occurred");
     }
 
-    const listings = data.data ?? [];
+    const posts = data.data ?? [];
 
-    return listings;
+    return posts;
   } catch (error) {
-    console.error("Error fetching listings:", error.message);
+    console.error("Error fetching posts:", error.message);
     throw error;
   }
 }

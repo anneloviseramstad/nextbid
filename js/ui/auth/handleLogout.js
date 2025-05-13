@@ -1,5 +1,4 @@
 import { removeUserToken } from "../../utils/storage.js";
-import { redirectTo } from "../../router.js";
 
 export function logOut() {
   const logoutButton = document.querySelector(".logout-button");
@@ -11,5 +10,5 @@ export function logOut() {
 
 function logoutHandler() {
   removeUserToken();
-  redirectTo("/login/index.html");
+  window.location.href = "/index.html";
 }

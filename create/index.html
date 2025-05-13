@@ -69,6 +69,7 @@
           Create New Listing
         </h1>
         <form
+          id="createForm"
           class="p-4 flex flex-col gap-4 items-center text-sm font-medium mt-4"
         >
           <label for="title">Title</label>
@@ -98,6 +99,14 @@
             placeholder="Image URL"
             required
           />
+          <label for="tags">Tags</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="tags"
+            name="tags"
+            placeholder="Tags"
+          />
           <label for="endsAt">Ends at</label>
           <input
             class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
@@ -112,6 +121,7 @@
           >
             CREATE LISTING
           </button>
+          <div id="message-container"></div>
         </form>
       </div>
     </main>

@@ -1,7 +1,6 @@
 import { loginUser } from "../../api/auth/login.js";
 import { displayMessage } from "../common/displayMessage.js";
 import { storeUserToken, storeUsername } from "../../utils/storage.js";
-import { redirectTo } from "../../router.js";
 
 export async function handleLogin(event) {
   event.preventDefault();
@@ -24,7 +23,7 @@ export async function handleLogin(event) {
 
     displayMessage("#message-container", "success", "Login successful.");
     setTimeout(() => {
-      redirectTo("/index.html");
+      window.location.href = "/index.html";
     }, 500);
   } catch (error) {
     // Håndter feilmeldinger

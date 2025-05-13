@@ -10,3 +10,4 @@ export const AUTH_REGISTER_URL = `${API_BASE_URL}/auth/register`;
 
 // Auction Endpoints
 export const API_AUCTION_LISTINGS = `${API_BASE_URL}/auction/listings`;
+export const API_AUCTION_PROFILES = `${API_BASE_URL}/auction/profiles`;

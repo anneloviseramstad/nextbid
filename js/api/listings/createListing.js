@@ -1,9 +1,9 @@
-import { API_AUCTION_LISTINGS } from "../constants/api.js";
-import { headers } from "../constants/headers.js";
+import { API_AUCTION_LISTINGS } from "../../constants/api.js";
+import { headers } from "../../constants/headers.js";
 
-export async function createListing({ title, description, image, endsAt }) {
+export async function createListing({ title, description, media, endsAt }) {
   try {
-    const data = JSON.stringify({ title, description, image, endsAt });
+    const data = JSON.stringify({ title, description, media, endsAt });
 
     const response = await fetch(API_AUCTION_LISTINGS, {
       method: "POST",
@@ -12,6 +12,7 @@ export async function createListing({ title, description, image, endsAt }) {
     });
 
     const json = await response.json();
+    console.log(json);
 
     if (!response.ok) {
       const errorMessage =

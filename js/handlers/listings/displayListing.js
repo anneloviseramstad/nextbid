@@ -1,10 +1,10 @@
 import { getListingById } from "../../api/listings/getListingById.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
-import { redirectTo } from "../../router.js";
+
 
 export async function displayListing(id) {
   if (!id) {
-    redirectTo("/index.html");
+    window.location.href = "/index.html";
     return;
   }
 

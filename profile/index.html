@@ -63,7 +63,62 @@
       </nav>
     </header>
 
-    <main class="w-full max-w-4xl mx-auto"></main>
+    <main>
+      <!-- Banner -->
+      <div id="profileBanner" class="relative">
+        <img
+          id="bannerImage"
+          alt="Profile Banner"
+          class="h-32 w-full object-cover"
+        />
+
+        <!-- Profilbilde – overlappes halvveis og plassert til venstre -->
+        <div
+          id="profileImageContainer"
+          class="absolute bottom-0 left-8 transform translate-y-1/2"
+        >
+          <img
+            id="profileImage"
+            alt="Profile Image"
+            class="w-40 h-40 rounded-full border-4 border-white object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Innhold under profilbilde, venstrejustert -->
+      <div id="profileTop" class="flex flex-col items-start mt-24 px-8">
+        <h2 id="profileUsername" class="font-bold text-xl">Username</h2>
+        <p id="profileBio" class="text-sm my-2">Bio</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-2 items-center px-8">
+        <a href="/create/index.html">
+          <button
+            class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
+          >
+            + Add Listing
+          </button>
+        </a>
+
+        <a href="#">
+          <button
+            class="font-medium text-sm bg-[#145163] rounded-xl text-white px-4 py-2 my-2"
+          >
+            Edit Profile
+          </button>
+        </a>
+      </div>
+      <div class="px-8 my-12">
+        <h1 class="font-['Abril_Fatface'] text-2xl text-center my-4">
+          - My Listings -
+        </h1>
+        <div
+          id="listingContainer"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 mt-2"
+        ></div>
+      </div>
+    </main>
+
     <footer
       class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8"
     >

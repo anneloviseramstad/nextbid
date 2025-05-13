@@ -1,22 +1,22 @@
 export function filterListings(listings) {
-  const sortByTitle = document.getElementById("sortByTitle").value;
+  const listingData = listings?.data || listings; // Få riktig liste
+
   const sortByTag = document.getElementById("sortByTag").value;
-  const searchInput = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
+  const searchInputElement = document.getElementById("searchInput");
+  const searchInput = searchInputElement?.value?.trim().toLowerCase() || "";
+  console.log(searchInput);
   const searchUsernameInput = document
     .getElementById("searchUsernameInput")
     .value.toLowerCase();
+  let filteredListings = listingData;
 
-  let filteredListings = listings;
-
-  if (searchUsernameInput) {
+  if (searchUsernameInput?.length > 0) {
     filteredListings = filteredListings.filter((listing) =>
-      listing.username.toLowerCase().includes(searchUsernameInput)
+      listing.seller?.name.toLowerCase().includes(searchUsernameInput)
     );
   }
 
-  if (searchInput) {
+  if (searchInput?.length > 0) {
     filteredListings = filteredListings.filter((listing) =>
       listing.title.toLowerCase().includes(searchInput)
     );
@@ -24,19 +24,8 @@ export function filterListings(listings) {
 
   if (sortByTag && sortByTag !== "all") {
     filteredListings = filteredListings.filter((listing) =>
-      listing.tags.includes(sortByTag)
+      (listing.tags || []).includes(sortByTag)
     );
-  }
-
-  if (sortByTitle) {
-    filteredListings = filteredListings.sort((a, b) => {
-      if (sortByTitle === "a-z") {
-        return a.title.localeCompare(b.title);
-      } else if (sortByTitle === "z-a") {
-        return b.title.localeCompare(a.title);
-      }
-      return 0;
-    });
   }
 
   return filteredListings;
