@@ -19,19 +19,15 @@ export function updateNavigation() {
   if (loggedIn) {
     if (loginLink) loginLink.style.display = "none";
     if (registerLink) registerLink.style.display = "none";
-
     if (profileLink) {
       profileLink.style.display = "inline";
       profileLink.textContent = `Welcome, ${username || "User"}`;
     }
-
     if (usernameSpan) {
       usernameSpan.textContent = username || "User";
     }
-
     if (logoutButton) {
       logoutButton.style.display = "inline";
-      // Fjern tidligere event listeners ved å klone knappen
       const newLogoutButton = logoutButton.cloneNode(true);
       logoutButton.parentNode.replaceChild(newLogoutButton, logoutButton);
 

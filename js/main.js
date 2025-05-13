@@ -3,7 +3,7 @@ import { authenticationStatus } from "./ui/common/navigation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   authenticationStatus();
-  router(); // init route on first load
+  router();
 });
 
-window.addEventListener("popstate", router); // ← nødvendig for navigering med tilbake-/fremknapp
+window.addEventListener("popstate", router);

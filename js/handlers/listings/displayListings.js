@@ -11,13 +11,11 @@ export async function displayListings() {
 
     const filteredListings = filterListings(response);
 
-    // Rens containeren før vi legger til nye oppføringer
     container.innerHTML = "";
 
-    // Bruk createListingElement for å lage HTML for hver oppføring
     filteredListings.forEach((listing) => {
-      const listingElement = createListingElement(listing); // Bruk funksjonen til å lage elementet
-      container.appendChild(listingElement); // Legg til elementet i containeren
+      const listingElement = createListingElement(listing);
+      container.appendChild(listingElement);
     });
   } catch (error) {
     displayMessage("#message-container", "warning", error.message);

@@ -8,7 +8,6 @@ export async function handleRegister(event) {
   const formData = new FormData(form);
 
   const formFields = Object.fromEntries(formData);
-  console.log(formFields);
 
   const data = {
     name: formFields.name,
@@ -24,7 +23,6 @@ export async function handleRegister(event) {
     };
   }
 
-  // Bare legg til banner hvis det faktisk er oppgitt en URL
   if (formFields.banner_url) {
     data.banner = {
       url: formFields.banner_url,

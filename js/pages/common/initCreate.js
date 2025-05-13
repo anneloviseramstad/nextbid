@@ -1,7 +1,7 @@
 import { createListingHandler } from "../../handlers/listings/createListing.js";
 
 export function initCreate() {
-  const createForm = document.querySelector("#createForm"); // evt. mer spesifikt hvis du har flere
+  const createForm = document.querySelector("#createForm");
   if (!createForm) return;
-  createForm.addEventListener("submit", createListingHandler); // ✅ riktig
+  createForm.addEventListener("submit", createListingHandler);
 }

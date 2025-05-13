@@ -1,10 +1,8 @@
 export function filterListings(listings) {
-  const listingData = listings?.data || listings; // Få riktig liste
-
+  const listingData = listings?.data || listings;
   const sortByTag = document.getElementById("sortByTag").value;
   const searchInputElement = document.getElementById("searchInput");
   const searchInput = searchInputElement?.value?.trim().toLowerCase() || "";
-  console.log(searchInput);
   const searchUsernameInput = document
     .getElementById("searchUsernameInput")
     .value.toLowerCase();

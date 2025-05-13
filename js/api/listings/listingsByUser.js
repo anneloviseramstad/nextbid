@@ -11,7 +11,7 @@ export async function listingsByUser(username) {
     );
 
     const json = await response.json();
-    console.log(json);
+   
 
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Unknown error occurred");

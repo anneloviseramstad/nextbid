@@ -7,8 +7,6 @@ export async function createListingHandler(event) {
   const form = event.target;
   const formData = new FormData(form);
   const formFields = Object.fromEntries(formData);
-
-  // ✅ Trim og split tags til array
   const tagsArray = formFields.tags
     ? formFields.tags
         .split(",")
@@ -16,7 +14,6 @@ export async function createListingHandler(event) {
         .filter(Boolean)
     : [];
 
-  // ✅ Lag dataobjektet i riktig format
   const data = {
     title: formFields.title.trim(),
     description: formFields.description.trim(),
@@ -27,8 +24,6 @@ export async function createListingHandler(event) {
       : [],
   };
 
-  console.log("Posting listing with data:", data);
-
   try {
     await createListing(data);
     displayMessage(
@@ -36,10 +31,14 @@ export async function createListingHandler(event) {
       "success",
       "Listing created successfully!"
     );
-    // Optional redirect
-    // form.reset();
-    // window.location.href = "/index.html";
+    setTimeout(() => {
+      window.location.href = "/index.html";
+    }, 500);
   } catch (error) {
-    displayMessage("#message-container", "warning", error.message);
+    displayMessage(
+      "#message-container",
+      "warning",
+      error.message || "Failed to create listing. Please try again."
+    );
   }
 }

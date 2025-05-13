@@ -19,7 +19,6 @@ export async function displayListing(id) {
       return;
     }
 
-    // Sjekk om vi har noen bud i det hele tatt (selv om bids er undefined)
     let highestBid = "No bids yet";
     if (listing.bids && listing.bids.length > 0) {
       highestBid = Math.max(...listing.bids.map((bid) => bid.amount));

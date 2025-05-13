@@ -12,10 +12,6 @@ const routes = {
   details: initListingPage,
   create: initCreate,
   profile: initProfile,
-
-  // legg til flere ruter her f.eks.:
-  // profile: initProfile,
-  // settings: initSettings,
 };
 
 export function router() {

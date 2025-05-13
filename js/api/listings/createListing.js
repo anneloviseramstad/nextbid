@@ -12,8 +12,7 @@ export async function createListing({ title, description, media, endsAt }) {
     });
 
     const json = await response.json();
-    console.log(json);
-
+  
     if (!response.ok) {
       const errorMessage =
         json.errors?.[0]?.message || "Unknown error occurred";

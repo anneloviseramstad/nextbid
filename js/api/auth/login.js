@@ -12,7 +12,7 @@ export async function loginUser(userDetails) {
     };
     const response = await fetch(AUTH_LOGIN_URL, fetchOptions);
     const json = await response.json();
-    console.log(json.data.accessToken);
+   
 
     if (!response.ok) {
       const errorMessage = json.errors?.[0]?.message || "Unknown login error.";
@@ -22,7 +22,7 @@ export async function loginUser(userDetails) {
     const accessToken = json.data.accessToken;
     storeUserToken(accessToken);
     storeUsername(userDetails.name);
-    console.log(json);
+   
 
     return json;
   } catch (error) {
