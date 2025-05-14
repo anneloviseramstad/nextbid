@@ -10,5 +10,5 @@ export function logOut() {
 
 function logoutHandler() {
   removeUserToken();
-  window.location.href = "/index.html";
+  window.location.href = "/login/index.html";
 }

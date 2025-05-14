@@ -4,6 +4,7 @@ import { initHome } from "./pages/common/initHome.js";
 import { initListingPage } from "./pages/common/initListing.js";
 import { initCreate } from "./pages/common/initCreate.js";
 import { initProfile } from "./pages/common/initProfile.js";
+import { initEdit } from "./pages/common/initEdit.js";
 
 const routes = {
   "": initHome,
@@ -12,6 +13,7 @@ const routes = {
   details: initListingPage,
   create: initCreate,
   profile: initProfile,
+  edit: initEdit,
 };
 
 export function router() {

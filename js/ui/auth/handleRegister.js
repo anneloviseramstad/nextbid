@@ -32,11 +32,7 @@ export async function handleRegister(event) {
 
   try {
     await registerUser(data);
-    displayMessage(
-      "#message-container",
-      "success",
-      "Registration successful. Please log in."
-    );
+    alert("Registration successful! Redirecting to login...");
     form.reset();
     window.location.href = "/login.html";
   } catch (error) {

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | NextBid</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-['Roboto'] text-[#454545]">
+    <header class="p-4 font-medium bg-white shadow">
+      <nav class="flex items-center justify-between relative">
+        <a
+          class="font-['Abril_Fatface'] text-3xl sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+          href="../"
+        >
+          <p>Next<span class="text-[#D54B01]">Bid</span></p>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label for="menu-toggle" class="sm:hidden cursor-pointer z-20">
+          <div class="flex flex-col gap-1">
+            <span class="w-6 h-0.5 bg-black"></span>
+            <span class="w-6 h-0.5 bg-black"></span>
+            <span class="w-6 h-0.5 bg-black"></span>
+          </div>
+        </label>
+
+        <div
+          class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex sm:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
+        >
+          <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:ml-4">
+            <li>
+              <a href="../about">
+                About Next<span class="text-[#D54B01]">Bid</span>
+              </a>
+            </li>
+            <li><a href="../support">Support</a></li>
+          </ul>
+
+          <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:mr-4">
+            <li>
+              <a id="profileLink" href="../profile" style="display: none">
+                Welcome, <span id="username"></span>
+              </a>
+            </li>
+            <li class="logout-button" style="display: none">
+              <button id="logout-button">Logout</button>
+            </li>
+            <li id="loginLink"><a href="../login">Login</a></li>
+            <li id="registerLink">
+              <a href="../register">Register</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="my-12">
+        <h1 class="font-['Abril_Fatface'] text-2xl text-center">
+          Edit Listing
+        </h1>
+        <form
+          id="editForm"
+          class="p-4 flex flex-col gap-4 items-center text-sm font-medium mt-4"
+        >
+          <label for="title">Title</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="title"
+            name="title"
+            placeholder="What are you selling?"
+            required
+          />
+          <label for="description">Description</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Describe Your Item"
+            required
+          />
+          <label for="image">Image</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="image"
+            name="image"
+            placeholder="Image URL"
+            required
+          />
+          <label for="tags">Tags</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="text"
+            id="tags"
+            name="tags"
+            placeholder="Tags"
+          />
+          <label for="endsAt">Ends at</label>
+          <input
+            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
+            type="date"
+            id="endsAt"
+            name="endsAt"
+            required
+          />
+          <button
+            class="bg-[#D54B01] text-white p-2.5 my-2 w-full max-w-md rounded-sm"
+            type="submit"
+          >
+            UPDATE LISTING
+          </button>
+          <div id="message-container"></div>
+        </form>
+      </div>
+    </main>
+    <footer
+      class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8 bg-[#F7F7F7] md:py-12"
+    >
+      <a class="font-['Abril_Fatface'] text-3xl" href="./">
+        <p>Next<span class="text-[#D54B01]">Bid</span></p>
+      </a>
+
+      <ul
+        class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 text-center"
+      >
+        <li>
+          <a href="../about"
+            >About Next<span class="text-[#D54B01]">Bid</span></a
+          >
+        </li>
+        <li><a href="../support">Support</a></li>
+        <li><a href="../terms">Terms & Conditions</a></li>
+        <li><a href="../policy">Privacy Policy</a></li>
+      </ul>
+      <p class="font-normal text-gray-400 text-xs">
+        &copy; 2025 NextBid Inc. All rights reserved.
+      </p>
+    </footer>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

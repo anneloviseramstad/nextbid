@@ -1,5 +1,6 @@
 export function createListingElement(listing) {
-  const { id, title, description, media, seller, created, bids } = listing;
+  const { id, title, description, media, seller, created, bids, endsAt } =
+    listing;
 
   const listingElement = document.createElement("div");
   listingElement.classList.add(
@@ -17,17 +18,75 @@ export function createListingElement(listing) {
   const contentWrapper = document.createElement("div");
   contentWrapper.classList.add("flex", "flex-col", "flex-grow");
 
+  const endsAtDate = new Date(endsAt);
+
+  const endsAtElement = document.createElement("p");
+  contentWrapper.appendChild(endsAtElement);
+
+  let interval; 
+
+  function updateCountdown() {
+    const now = new Date();
+    const distance = endsAtDate - now;
+
+    if (distance <= 0) {
+      endsAtElement.textContent = "Ended";
+      clearInterval(interval); 
+      return;
+    }
+
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    endsAtElement.textContent = `Ends in: ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  updateCountdown();
+  interval = setInterval(updateCountdown, 1000);
+
   if (media && media.length > 0) {
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add(
+      "relative",
+      "w-full",
+      "h-48",
+      "overflow-hidden",
+      "rounded-t-lg"
+    );
+
     const image = document.createElement("img");
     image.src = media[0].url;
     image.alt = media[0].alt || "Listing Image";
-    image.classList.add("w-full", "h-48", "object-cover", "rounded-t-lg");
-    contentWrapper.appendChild(image);
+    image.classList.add("w-full", "h-full", "object-cover");
+
+    endsAtElement.classList.add(
+      "absolute",
+      "bottom-0",
+      "right-0",
+      "text-sm",
+      "m-2",
+      "px-2",
+      "py-1",
+      "text-white",
+      "bg-black/50",
+      "rounded-lg"
+    );
+
+    imageContainer.appendChild(image);
+    imageContainer.appendChild(endsAtElement);
+    contentWrapper.appendChild(imageContainer);
   }
 
   const heading = document.createElement("h5");
   heading.textContent = title;
-  heading.classList.add("text-lg", "px-2", "font-bold", "text-[#454545]");
+  heading.classList.add(
+    "text-lg",
+    "px-2",
+    "font-bold",
+    "text-[#454545]",
+    "mt-2"
+  );
   contentWrapper.appendChild(heading);
 
   const sellerInfo = document.createElement("p");
@@ -71,12 +130,15 @@ export function createListingElement(listing) {
         "text-xs",
         "px-2",
         "text-gray-700",
-        "bg-white",
         "p-2",
         "mt-1",
         "mx-2",
-        "mb-4"
+        "mb-4",
+        "relative",
+        "overflow-hidden"
       );
+      bidItem.style.backgroundImage =
+        "linear-gradient(to right, white 97%, #D54B01 85%)";
       bidsContainer.appendChild(bidItem);
     });
   } else {

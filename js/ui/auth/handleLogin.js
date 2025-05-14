@@ -10,18 +10,15 @@ export async function handleLogin(event) {
   const userData = Object.fromEntries(formData.entries());
 
   try {
-    const { data } = await loginUser(userData); 
+    const { data } = await loginUser(userData);
     const { accessToken, name } = data;
 
     storeUserToken(accessToken);
     storeUsername(name);
-    
-    displayMessage("#message-container", "success", "Login successful.");
-    setTimeout(() => {
-      window.location.href = "/index.html";
-    }, 500);
-  } catch (error) {
 
+    alert("Login successful! Redirecting to profile page...");
+    window.location.href = "/profile/index.html";
+  } catch (error) {
     displayMessage(
       "#message-container",
       "warning",
