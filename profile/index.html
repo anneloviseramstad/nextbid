@@ -87,26 +87,35 @@
 
       <!-- Innhold under profilbilde, venstrejustert -->
       <div id="profileTop" class="flex flex-col items-start mt-24 px-8">
-        <h2 id="profileUsername" class="font-bold text-xl">Username</h2>
+        <div class="flex items-center gap-4">
+          <h2 id="profileUsername" class="font-bold text-xl">Username</h2>
+          <button
+            id="credits"
+            class="p-2 bg-[#D54B01] text-white text-sm rounded-lg"
+          >
+            Credits:
+          </button>
+        </div>
         <p id="profileBio" class="text-sm my-2">Bio</p>
       </div>
+      <div>
+        <div class="flex flex-col md:flex-row gap-2 items-center px-8">
+          <a href="/create/index.html">
+            <button
+              class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
+            >
+              + Add Listing
+            </button>
+          </a>
 
-      <div class="flex flex-col md:flex-row gap-2 items-center px-8">
-        <a href="/create/index.html">
-          <button
-            class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
-          >
-            + Add Listing
-          </button>
-        </a>
-
-        <a href="#">
-          <button
-            class="font-medium text-sm bg-[#145163] rounded-xl text-white px-4 py-2 my-2"
-          >
-            Edit Profile
-          </button>
-        </a>
+          <a href="#">
+            <button
+              class="font-medium text-sm bg-[#145163] rounded-xl text-white px-4 py-2 my-2"
+            >
+              Edit Profile
+            </button>
+          </a>
+        </div>
       </div>
       <div class="px-8 my-12">
         <h1 class="font-['Abril_Fatface'] text-2xl text-center my-4">
@@ -118,7 +127,6 @@
         ></div>
       </div>
     </main>
-
     <footer
       class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8 bg-[#F7F7F7] md:py-12"
     >
