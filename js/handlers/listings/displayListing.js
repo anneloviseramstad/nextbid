@@ -1,21 +1,21 @@
 import { getListingById } from "../../api/listings/getListingById.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
-
 export async function displayListing(id) {
   if (!id) {
     window.location.href = "/index.html";
     return;
   }
 
-  const container = document.querySelector("#listingContainer");
+  const listingContainer = document.querySelector("#listingContainer");
+  const bidsContainer = document.querySelector("#bidContainer");
 
   try {
     const listingData = await getListingById(id);
     const listing = listingData.data;
 
     if (!listing) {
-      displayMessage(container, "warning", "Listing not found");
+      displayMessage(listingContainer, "warning", "Listing not found");
       return;
     }
 
@@ -24,10 +24,11 @@ export async function displayListing(id) {
       highestBid = Math.max(...listing.bids.map((bid) => bid.amount));
     }
 
-    container.innerHTML = `
-      <img class="mb-4 w-1/2 max-h-96 object-cover rounded-sm rounded-md" src="${
-        listing.media?.[0]?.url || ""
-      }" alt="${listing.media?.alt || "Listing image"}" />
+    listingContainer.innerHTML = `
+      <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 my-12 mx-8">
+        <img class="mb-4 w-1/2 max-h-96 object-cover rounded-md" src="${
+          listing.media?.[0]?.url || ""
+        }" alt="${listing.media?.alt || "Listing image"}" />
         <div>
           <h1 class="font-bold text-lg md:text-2xl">${listing.title}</h1>
           <div class="text-xs text-gray-400 py-2">
@@ -40,35 +41,46 @@ export async function displayListing(id) {
             <p>Ends at: ${new Date(listing.endsAt).toLocaleString()}</p>
             <p><strong>Highest bid:</strong> ${highestBid}</p>
           </div>
-          <div id="shareButton" class="share-icon" title="Share">
-            <i class="fa-solid fa-link"></i>
-          </div>
+        </div>
       </div>
     `;
 
-    const shareButton = document.getElementById("shareButton");
-    shareButton.addEventListener("click", () => copyShareableUrl(id));
+    const bids = listing.bids;
+
+    if (bids && bids.length > 0) {
+      const sortedBids = [...bids].sort(
+        (a, b) => new Date(b.created) - new Date(a.created)
+      );
+
+      bidsContainer.innerHTML = `
+        <div class="bg-gray-100 p-4 rounded-md mx-8 mb-8">
+          <h6 class="font-semibold text-sm mb-2">Recent bids:</h6>
+          ${sortedBids
+            .slice(0, 3)
+            .map(
+              (bid) => `
+              <p class="text-xs text-gray-700 bg-white rounded p-2 mt-1 shadow-sm">
+                $${bid.amount} - by ${bid.bidder.name}
+              </p>
+            `
+            )
+            .join("")}
+        </div>
+      `;
+    } else {
+      bidsContainer.innerHTML = `
+        <div class="bg-gray-100 p-4 rounded-md mx-8 mb-8">
+          <h6 class="font-semibold text-sm mb-2">Recent bids:</h6>
+          <p class="text-xs text-gray-500">No bids yet.</p>
+        </div>
+      `;
+    }
   } catch (error) {
     console.error("Error fetching listing:", error);
     displayMessage(
-      container,
+      listingContainer,
       "danger",
       "An error occurred while fetching the listing."
     );
   }
-}
-
-function copyShareableUrl(listingId) {
-  const currentUrl = window.location.href.split("?")[0];
-  const shareableUrl = `${currentUrl}?id=${listingId}`;
-
-  navigator.clipboard
-    .writeText(shareableUrl)
-    .then(() => {
-      alert("Shareable URL copied to clipboard: " + shareableUrl);
-    })
-    .catch((err) => {
-      console.error("Error copying shareable URL:", err);
-      alert("Failed to copy shareable URL.");
-    });
 }
