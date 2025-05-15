@@ -3,9 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home | NextBid</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="font-['Roboto'] text-[#454545]">
     <header class="p-4 font-medium bg-white shadow">
       <nav class="flex items-center justify-between relative">
         <a
@@ -53,6 +62,88 @@
         </div>
       </nav>
     </header>
+    <main>
+      <section class="w-full max-w-4xl mx-auto p-4 mt-12">
+        <h1 class="text-3xl font-medium mb-2">
+          Welcome to NextBid – Where Every Bid Counts!
+        </h1>
+        <p class="text-lg my-4">
+          At NextBid, we bring the thrill of the auction right to your
+          fingertips. Whether you're looking for amazing deals, rare finds, or
+          just love the excitement of winning, you've come to the right place.
+          Our platform is built to make online bidding fun, fair, and fast.
+        </p>
+      </section>
+      <section class="bg-[#F7F7F7]">
+        <div class="w-full max-w-4xl mx-auto px-4 py-12">
+          <h2 class="text-xl font-medium text-center mb-2">Our Mission</h2>
+          <p class="text-center">
+            We aim to make online auctions more accessible and entertaining for
+            everyone. Whether you're a casual shopper or a competitive bidder,
+            we provide a platform where your strategy and timing can turn a few
+            credits into a big win.
+          </p>
+        </div>
+      </section>
+      <section
+        class="w-full max-w-4xl mx-auto p-4 flex flex-col md:flex-row gap-8 mt-12 items-center justify-center"
+      >
+        <div class="text-center">
+          <h2 class="font-medium text-xl mb-2">How It Works</h2>
+          <p>
+            Our auction system is simple and exciting. Instead of spending big
+            upfront, you use <strong>credits</strong> to place bids on items you
+            want. Each bid increases the item’s price slightly and extends the
+            timer, giving everyone a fair chance to win. When the timer hits
+            zero, the highest bidder wins!
+          </p>
+        </div>
+        <img
+          src="../assets/images/about.avif"
+          alt="Hands pointing at laptop, from above."
+          class="md:w-1/2 md:rounded-full"
+        />
+      </section>
+      <section
+        class="w-full max-w-4xl mx-auto p-4 flex flex-col-reverse md:flex-row gap-8 mb-12 items-center justify-center"
+      >
+        <img
+          src="../assets/images/about2.avif"
+          alt="Painting of Mona Lisa hanging in a gallery."
+          class="md:w-1/2 md:rounded-full"
+        />
+        <div>
+          <h2 class="font-medium text-xl mb-2">Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Great Deals:</strong> Win items at a fraction of the
+              retail price.
+            </li>
+            <li>
+              <strong>User-Friendly Experience:</strong> Bidding is easy,
+              secure, and accessible on any device.
+            </li>
+            <li>
+              <strong>Exciting Variety:</strong> From electronics to fashion and
+              collectibles — there's always something new to bid on.
+            </li>
+            <li>
+              <strong>Fair Play:</strong> Transparent rules and verified
+              auctions keep the game honest.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="bg-[#F7F7F7]">
+        <div class="w-full max-w-4xl mx-auto px-4 py-12">
+          <h2 class="text-xl font-medium text-center mb-2">Join the Fun!</h2>
+          <p class="text-center">
+            Sign up today, grab your credits, and start bidding. Who knows —
+            your next big win might be just a few clicks away!
+          </p>
+        </div>
+      </section>
+    </main>
     <footer
       class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8"
     >
@@ -74,5 +165,6 @@
         &copy; 2025 NextBid Inc. All rights reserved.
       </p>
     </footer>
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>

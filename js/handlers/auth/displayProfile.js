@@ -4,6 +4,7 @@ import { createListingElement } from "../../components/listings/listingElement.j
 import { renderProfile } from "../../components/listings/renderProfile.js";
 import { listingsByUser } from "../../api/listings/listingsByUser.js";
 import { deleteListingHandler } from "../listings/deleteListing.js";
+import { bidsByUser } from "../../api/listings/bidsByUser.js";
 
 export async function displayProfile() {
   const username = retrieveUsername();
@@ -30,10 +31,9 @@ export async function displayProfile() {
       listingsArray.forEach((listing) => {
         const listingElement = createListingElement(listing);
 
-      
         if (listing.seller?.name === username) {
           const deleteButton = createDeleteButton(listing.id);
-          const editButton = createEditButton(listing.id); 
+          const editButton = createEditButton(listing.id);
           listingElement.appendChild(deleteButton);
           listingElement.appendChild(editButton);
         }
@@ -42,6 +42,42 @@ export async function displayProfile() {
       });
     } else {
       console.error("Error: listings.data is not an array.");
+    }
+
+    const myBidsContainer = document.getElementById("myBidsContainer");
+
+    try {
+      const bidsResponse = await bidsByUser(username);
+
+      if (bidsResponse && Array.isArray(bidsResponse.data)) {
+        myBidsContainer.innerHTML = "";
+
+        // Bruk et Map for å unngå duplikate listings om du har bydd flere ganger på samme
+        const uniqueListingsMap = new Map();
+
+        bidsResponse.data.forEach((bid) => {
+          const listing = bid.listing;
+          if (listing && !uniqueListingsMap.has(listing.id)) {
+            uniqueListingsMap.set(listing.id, listing);
+          }
+        });
+
+        const uniqueListings = Array.from(uniqueListingsMap.values());
+
+        if (uniqueListings.length === 0) {
+          myBidsContainer.innerHTML =
+            "<p class='text-sm text-gray-500'>You haven't placed any bids yet.</p>";
+        } else {
+          uniqueListings.forEach((listing) => {
+            const card = createListingElement(listing);
+            myBidsContainer.appendChild(card);
+          });
+        }
+      }
+    } catch (err) {
+      console.error("Error loading user bids:", err);
+      myBidsContainer.innerHTML =
+        "<p class='text-sm text-red-500'>Failed to load your bids.</p>";
     }
   } catch (error) {
     console.error("Error fetching profile:", error.message);

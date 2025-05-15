@@ -34,7 +34,7 @@ export async function handleRegister(event) {
     await registerUser(data);
     alert("Registration successful! Redirecting to login...");
     form.reset();
-    window.location.href = "/login.html";
+    window.location.href = "/login/index.html";
   } catch (error) {
     displayMessage("#message-container", "warning", error.message);
   }

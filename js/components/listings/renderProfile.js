@@ -16,7 +16,13 @@ export async function renderProfile(userData) {
   const bioElement = document.getElementById("profileBio");
   const creditsButton = document.getElementById("credits");
 
-  if (!profileBanner || !profileImage || !usernameElement || !bioElement || !creditsButton) {
+  if (
+    !profileBanner ||
+    !profileImage ||
+    !usernameElement ||
+    !bioElement ||
+    !creditsButton
+  ) {
     console.error("Some HTML elements were not found.");
     return;
   }

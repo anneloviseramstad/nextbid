@@ -3,9 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home | NextBid</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="font-['Roboto'] text-[#454545]">
     <header class="p-4 font-medium bg-white shadow">
       <nav class="flex items-center justify-between relative">
         <a
@@ -53,6 +62,76 @@
         </div>
       </nav>
     </header>
+    <main>
+      <section class="w-full max-w-4xl mx-auto p-4 mt-12">
+        <h1 class="text-3xl font-medium mb-2">Support Team</h1>
+        <p class="text-lg my-4">
+          At NextBid, we’re committed to providing you with the best experience
+          possible. If you have questions, issues, or need assistance, you’re in
+          the right place. Check out the topics below or reach out to our
+          support team directly.
+        </p>
+      </section>
+      <section class="bg-[#F7F7F7]">
+        <div class="w-full max-w-4xl mx-auto px-4 py-12">
+          <h2 class="text-xl font-medium text-center mb-2">Common Questions</h2>
+          <ul>
+            <li>
+              <strong>How do credits work?</strong> Credits are the currency you
+              use to place bids on items. You can purchase credits in various
+              packages on your account page.
+            </li>
+            <li>
+              <strong>How do I place a bid?</strong> Simply choose an item you
+              want, use your credits to place a bid, and watch the timer. The
+              highest bid when the timer runs out wins the item.
+            </li>
+            <li>
+              <strong>What happens if I win an auction?</strong>
+              Congratulations! You’ll receive an email with payment and delivery
+              instructions.
+            </li>
+            <li>
+              <strong>Can I get a refund?</strong> Please review our
+              <a href="/policy">Policy</a> for details about eligibility and
+              procedures.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section
+        class="w-full max-w-4xl mx-auto p-4 flex flex-col md:flex-row gap-8 mt-12 items-center justify-center"
+      >
+        <div class="text-center">
+          <h2 class="font-medium text-xl mb-2">Contact Support</h2>
+          <p>
+            If you can’t find what you’re looking for, our friendly support team
+            is here to help. Reach out to us via:
+          </p>
+          <ul>
+            <li>
+              Email:
+              <strong>support@nextbid.com</strong>
+            </li>
+            <li>
+              Live Chat: Available Monday to Friday, 9 AM - 6 PM (your time
+              zone)
+            </li>
+            <li>Phone: +1 (555) 123-4567</li>
+          </ul>
+        </div>
+      </section>
+      <section class="bg-[#F7F7F7] mt-8 md:mt-12">
+        <div class="w-full max-w-4xl mx-auto px-4 py-12 text-center">
+          <h2 class="font-medium text-xl mb-2">Feedback</h2>
+          <p>
+            We love hearing from you! If you have suggestions on how we can
+            improve, please let us know through our
+            <a href="[link_to_feedback_form]">feedback form</a>.
+          </p>
+        </div>
+      </section>
+    </main>
     <footer
       class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8"
     >
@@ -74,5 +153,6 @@
         &copy; 2025 NextBid Inc. All rights reserved.
       </p>
     </footer>
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>
