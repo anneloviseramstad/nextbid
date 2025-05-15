@@ -18,34 +18,32 @@ export function createListingElement(listing) {
   const contentWrapper = document.createElement("div");
   contentWrapper.classList.add("flex", "flex-col", "flex-grow");
 
+
   const endsAtDate = new Date(endsAt);
-
   const endsAtElement = document.createElement("p");
-  contentWrapper.appendChild(endsAtElement);
 
-  let interval; 
-
+  let interval;
   function updateCountdown() {
     const now = new Date();
     const distance = endsAtDate - now;
 
     if (distance <= 0) {
       endsAtElement.textContent = "Ended";
-      clearInterval(interval); 
+      clearInterval(interval);
       return;
     }
 
     const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((distance / (1000 * 60)) % 60);
     const seconds = Math.floor((distance / 1000) % 60);
-
     endsAtElement.textContent = `Ends in: ${hours}h ${minutes}m ${seconds}s`;
   }
 
   updateCountdown();
   interval = setInterval(updateCountdown, 1000);
 
-  if (media && media.length > 0) {
+
+  if (media?.length > 0) {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add(
       "relative",
@@ -76,7 +74,12 @@ export function createListingElement(listing) {
     imageContainer.appendChild(image);
     imageContainer.appendChild(endsAtElement);
     contentWrapper.appendChild(imageContainer);
+  } else {
+  
+    endsAtElement.classList.add("text-sm", "px-2", "py-1", "text-gray-600");
+    contentWrapper.appendChild(endsAtElement);
   }
+
 
   const heading = document.createElement("h5");
   heading.textContent = title;
@@ -96,7 +99,7 @@ export function createListingElement(listing) {
 
   const date = document.createElement("p");
   const formattedDate = new Date(created).toLocaleDateString();
-  date.textContent = `${formattedDate}`;
+  date.textContent = formattedDate;
   date.classList.add("text-xs", "px-2", "text-gray-400", "mb-2");
   contentWrapper.appendChild(date);
 
@@ -113,19 +116,20 @@ export function createListingElement(listing) {
   );
   contentWrapper.appendChild(descriptionP);
 
+
   const bidsHeading = document.createElement("h6");
   bidsHeading.textContent = "Recent bids:";
   bidsHeading.classList.add("font-semibold", "px-2", "mt-2", "text-sm");
   contentWrapper.appendChild(bidsHeading);
 
   const bidsContainer = document.createElement("div");
-  if (bids && bids.length > 0) {
+  if (bids?.length > 0) {
     const sortedBids = [...bids].sort(
       (a, b) => new Date(b.created) - new Date(a.created)
     );
     sortedBids.slice(0, 3).forEach((bid) => {
       const bidItem = document.createElement("p");
-      bidItem.textContent = `$${bid.amount} - by ${bid.bidder.name} `;
+      bidItem.textContent = `$${bid.amount} - by ${bid.bidder.name}`;
       bidItem.classList.add(
         "text-xs",
         "px-2",
@@ -149,7 +153,48 @@ export function createListingElement(listing) {
   }
   contentWrapper.appendChild(bidsContainer);
 
-  listingElement.appendChild(contentWrapper);
+
+  const hypeContainer = document.createElement("div");
+  hypeContainer.classList.add(
+    "flex",
+    "items-center",
+    "justify-between",
+    "px-2",
+    "mt-2",
+    "gap-2"
+  );
+
+  const bidInput = document.createElement("input");
+  bidInput.type = "number";
+  bidInput.placeholder = "Enter bid amount";
+  bidInput.classList.add(
+    "border",
+    "rounded-lg",
+    "px-2",
+    "py-1",
+    "text-sm",
+    "w-full",
+    "bid-input"
+  );
+  bidInput.dataset.listingId = id;
+
+  const bidButton = document.createElement("button");
+  bidButton.textContent = "Bid!";
+  bidButton.classList.add(
+    "bg-[#D54B01]",
+    "text-white",
+    "px-3",
+    "py-1",
+    "rounded-lg",
+    "text-sm",
+    "bid-button"
+  );
+  bidButton.dataset.listingId = id;
+
+  hypeContainer.appendChild(bidInput);
+  hypeContainer.appendChild(bidButton);
+  contentWrapper.appendChild(hypeContainer);
+
 
   const detailLink = document.createElement("a");
   detailLink.href = `/details/index.html?id=${id}`;
@@ -163,37 +208,7 @@ export function createListingElement(listing) {
     "rounded-lg",
     "text-center"
   );
-
-  const hypeContainer = document.createElement("div");
-  hypeContainer.classList.add(
-    "flex",
-    "items-center",
-    "justify-between",
-    "px-2",
-    "mt-2",
-    "gap-2"
-  );
-
-  const hype = document.createElement("p");
-  hype.textContent = "Don't miss out!";
-  hype.classList.add("text-xs", "text-gray-400");
-
-  const bidButton = document.createElement("button");
-  bidButton.textContent = "Bid";
-  bidButton.classList.add(
-    "bg-[#D54B01]",
-    "text-white",
-    "px-3",
-    "py-1",
-    "rounded-lg",
-    "text-sm"
-  );
-
-  hypeContainer.appendChild(hype);
-  hypeContainer.appendChild(bidButton);
-
-  listingElement.appendChild(hypeContainer);
-
+  listingElement.appendChild(contentWrapper);
   listingElement.appendChild(detailLink);
 
   return listingElement;

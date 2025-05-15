@@ -88,42 +88,89 @@
       <!-- Innhold under profilbilde, venstrejustert -->
       <div id="profileTop" class="flex flex-col items-start mt-24 px-8">
         <div class="flex items-center gap-4">
-          <h2 id="profileUsername" class="font-bold text-xl">Username</h2>
-          <button
-            id="credits"
-            class="p-2 bg-[#D54B01] text-white text-sm rounded-lg"
-          >
-            Credits:
-          </button>
+          <h1 id="profileUsername" class="font-bold text-xl">Username</h1>
         </div>
         <p id="profileBio" class="text-sm my-2">Bio</p>
       </div>
       <div>
-        <div class="flex flex-col md:flex-row gap-2 items-center px-8">
-          <a href="/create/index.html">
-            <button
-              class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
-            >
-              + Add Listing
-            </button>
-          </a>
-
+        <div class="flex flex-row gap-2 items-center px-8">
+          <button
+            id="credits"
+            class="p-2 bg-[#D54B01] text-white text-sm rounded-lg font-medium"
+          >
+            Credits:
+          </button>
           <a href="#">
             <button
-              class="font-medium text-sm bg-[#145163] rounded-xl text-white px-4 py-2 my-2"
+              class="font-medium text-sm bg-[#145163] rounded-lg text-white px-4 py-2 my-2"
             >
               Edit Profile
             </button>
           </a>
         </div>
       </div>
-      <div class="px-8 my-12">
-        <h1 class="font-['Abril_Fatface'] text-2xl text-center my-4">
-          - My Listings -
-        </h1>
+      <div class="px-8 my-4">
+        <div class="flex flex-row items-center justify-between">
+          <h2 class="font-['Abril_Fatface'] text-2xl text-center my-4">
+            - My Bids -
+          </h2>
+          <a
+            href="../create/"
+            class="w-full md:w-auto flex justify-end items-start"
+          >
+            <button
+              class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
+            >
+              + Add Listing
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        id="myBidsContainer"
+        class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
+      ></div>
+      <div class="px-8 my-4">
+        <div class="flex flex-row items-center justify-between">
+          <h2 class="font-['Abril_Fatface'] text-2xl text-center my-4">
+            - My Wins -
+          </h2>
+          <a
+            href="../create/"
+            class="w-full md:w-auto flex justify-end items-start"
+          >
+            <button
+              class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
+            >
+              + Add Listing
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        id="winsContainer"
+        class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
+      ></div>
+      <div class="px-8 my-4">
+        <div class="flex flex-row items-center justify-between">
+          <h2 class="font-['Abril_Fatface'] text-2xl text-center my-4">
+            - My Listings -
+          </h2>
+          <a
+            href="../create/"
+            class="w-full md:w-auto flex justify-end items-start"
+          >
+            <button
+              class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
+            >
+              + Add Listing
+            </button>
+          </a>
+        </div>
+
         <div
           id="listingContainer"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-4 mt-2"
+          class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
         ></div>
       </div>
     </main>

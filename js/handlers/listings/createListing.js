@@ -31,9 +31,8 @@ export async function createListingHandler(event) {
       "success",
       "Listing created successfully!"
     );
-    setTimeout(() => {
-      window.location.href = "/index.html";
-    }, 500);
+    alert("Listing created successfully! Redirecting to profile page...");
+    window.location.href = "/profile/index.html";
   } catch (error) {
     displayMessage(
       "#message-container",

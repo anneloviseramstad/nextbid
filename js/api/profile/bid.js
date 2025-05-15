@@ -5,8 +5,8 @@ export async function bidOnListing(id, amount) {
   try {
     const response = await fetch(`${API_AUCTION_LISTINGS}/${id}/bids`, {
       method: "POST",
-      body: JSON.stringify({ amount }),
       headers: headers(),
+      body: JSON.stringify({ amount }),
     });
 
     const json = await response.json();
@@ -17,7 +17,7 @@ export async function bidOnListing(id, amount) {
 
     return json;
   } catch (error) {
-    console.error("Error editing post:", error.message);
+    console.error("Error placing bid:", error.message);
     throw error;
   }
 }
