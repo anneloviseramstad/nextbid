@@ -52,7 +52,6 @@ export async function displayProfile() {
       if (bidsResponse && Array.isArray(bidsResponse.data)) {
         myBidsContainer.innerHTML = "";
 
-        // Bruk et Map for å unngå duplikate listings om du har bydd flere ganger på samme
         const uniqueListingsMap = new Map();
 
         bidsResponse.data.forEach((bid) => {

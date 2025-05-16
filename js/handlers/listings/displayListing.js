@@ -26,7 +26,7 @@ export async function displayListing(id) {
     }
 
     listingContainer.innerHTML = `
-      <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 my-12 mx-8">
+      <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 my-8 md:my-12 mx-4 md:mx-8">
         <img class="mb-4 w-1/2 max-h-96 object-cover rounded-md" src="${
           listing.media?.[0]?.url || ""
         }" alt="${listing.media?.alt || "Listing image"}" />
@@ -54,7 +54,7 @@ export async function displayListing(id) {
       );
 
       bidsContainer.innerHTML = `
-        <div class="bg-gray-100 p-4 rounded-md mx-8 mb-8">
+        <div class="bg-gray-100 p-4 rounded-md mx-4 md:mx-8 mb-4 md:mb-8">
           <h6 class="font-semibold text-sm mb-2">Recent bids:</h6>
           ${sortedBids
             .slice(0, 3)
