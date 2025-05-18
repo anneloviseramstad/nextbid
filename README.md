@@ -1,6 +1,7 @@
 
 # **NextBid**
 
+![Readme Image](https://github.com/anneloviseramstad/nextbid/blob/main/readme-image.png)
 
 ## **Overview**
 
