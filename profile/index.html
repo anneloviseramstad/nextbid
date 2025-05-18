@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Manage your NextBid profile, view bidding history, update personal details, and track your auction activity all in one place."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.png" />
     <title>Profile | NextBid</title>
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,14 +22,13 @@
   </head>
   <body class="font-['Roboto'] text-[#454545]">
     <header class="p-4 font-medium bg-white shadow">
-      <nav class="flex items-center justify-between relative">
+      <nav class="flex items-center justify-between relative max-w-6xl mx-auto">
         <a
           class="font-['Abril_Fatface'] text-3xl sm:absolute sm:left-1/2 sm:-translate-x-1/2"
           href="../"
         >
           <p>Next<span class="text-[#D54B01]">Bid</span></p>
         </a>
-
         <input type="checkbox" id="menu-toggle" class="hidden peer" />
         <label for="menu-toggle" class="sm:hidden cursor-pointer z-20">
           <div class="flex flex-col gap-1">
@@ -32,7 +37,6 @@
             <span class="w-6 h-0.5 bg-black"></span>
           </div>
         </label>
-
         <div
           class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex sm:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
         >
@@ -63,7 +67,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="w-full max-w-7xl mx-auto">
       <div id="profileBanner" class="relative">
         <img
           id="bannerImage"
@@ -145,11 +149,12 @@
             - My Wins -
           </h2>
         </div>
-      </div>
-      <div
+        <div
         id="winsContainer"
         class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
       ></div>
+      </div>
+      
     </main>
     <footer
       class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8 bg-[#F7F7F7] md:py-12"

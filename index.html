@@ -7,6 +7,7 @@
       content="Welcome to NextBid – the leading online auction platform. Discover, bid, and win items from sellers around the world."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.png" />
     <title>Home | NextBid</title>
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,8 +20,8 @@
     />
   </head>
   <body class="font-['Roboto'] text-[#454545]">
-    <header class="p-4 font-medium bg-white shadow">
-      <nav class="flex items-center justify-between relative">
+    <header class="p-4 font-medium bg-white drop-shadow-sm">
+      <nav class="flex items-center justify-between relative max-w-6xl mx-auto">
         <a
           class="font-['Abril_Fatface'] text-3xl md:absolute md:left-1/2 md:-translate-x-1/2"
           href="/"
@@ -161,28 +162,32 @@
         </div>
       </section>
       <section
-        class="bg-[#F7F7F7] flex flex-col md:flex-row gap-12 items-center py-4 md:px-20 md:py-12 text-center"
+        class="bg-[#F7F7F7] flex flex-col md:flex-row gap-12 items-center mt-12 py-4 md:px-20 md:py-12 text-center"
       >
-        <div class="flex flex-col items-center">
-          <h4 class="font-bold mb-4">Free Shipping</h4>
-          <p>
-            We cover the shipping! Win the auction and get your item delivered
-            for free—anywhere in the country.
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <h4 class="font-bold mb-4">Authentically Guaranteed</h4>
-          <p>
-            Every item is verified before it ships. Bid with confidence knowing
-            you’re getting the real deal.
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <h4 class="font-bold mb-4">No Hidden Fees</h4>
-          <p>
-            What you bid is what you pay. No extra charges, no surprises—just
-            simple, honest auctions.
-          </p>
+        <div
+          class="flex flex-col lg:flex-row items-center lg:px-20 my-12 gap-4 md:gap-12 max-w-6xl mx-auto"
+        >
+          <div class="flex flex-col items-center">
+            <h4 class="font-bold mb-4">Free Shipping</h4>
+            <p>
+              We cover the shipping! Win the auction and get your item delivered
+              for free—anywhere in the country.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <h4 class="font-bold mb-4">Authentically Guaranteed</h4>
+            <p>
+              Every item is verified before it ships. Bid with confidence
+              knowing you’re getting the real deal.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <h4 class="font-bold mb-4">No Hidden Fees</h4>
+            <p>
+              What you bid is what you pay. No extra charges, no surprises—just
+              simple, honest auctions.
+            </p>
+          </div>
         </div>
       </section>
       <section>

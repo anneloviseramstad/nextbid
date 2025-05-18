@@ -5,6 +5,7 @@ import { renderProfile } from "../../components/listings/renderProfile.js";
 import { listingsByUser } from "../../api/listings/listingsByUser.js";
 import { deleteListingHandler } from "../listings/deleteListing.js";
 import { bidsByUser } from "../../api/listings/bidsByUser.js";
+import { winsByUser } from "../../api/listings/winsByUser.js";
 
 export async function displayProfile() {
   const username = retrieveUsername();
@@ -84,7 +85,6 @@ export async function displayProfile() {
                 "bg-white"
               );
 
-              // Legg til informasjon om budet
               bidElement.innerHTML = `
                 <p><strong>Listing:</strong> <a href="/details/index.html?id=${
                   listing.id
@@ -107,6 +107,31 @@ export async function displayProfile() {
     }
   } catch (error) {
     console.error("Error fetching profile:", error.message);
+  }
+  const myWinsContainer = document.getElementById("winsContainer");
+
+  try {
+    const winsResponse = await winsByUser(username);
+
+    if (winsResponse && Array.isArray(winsResponse.data)) {
+      myWinsContainer.innerHTML = "";
+
+      if (winsResponse.data.length === 0) {
+        myWinsContainer.innerHTML =
+          "<p class='text-sm text-gray-500'>You haven't won any auctions yet.</p>";
+      } else {
+        winsResponse.data.forEach((listing) => {
+          const winCard = createListingElement(listing);
+          myWinsContainer.appendChild(winCard);
+        });
+      }
+    } else {
+      console.error("Error: winsResponse.data is not an array.");
+    }
+  } catch (err) {
+    console.error("Error loading user wins:", err);
+    myWinsContainer.innerHTML =
+      "<p class='text-sm text-red-500'>Failed to load your wins.</p>";
   }
 }
 
