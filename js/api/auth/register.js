@@ -9,12 +9,14 @@ export async function registerUser(userDetails) {
       headers: headers(),
     };
     const response = await fetch(AUTH_REGISTER_URL, fetchOptions);
-    const data = await response.json();
+    const json = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.message || "Registration failed");
+      const errorMessage =
+        json.errors?.[0]?.message || "Unknown registration error.";
+      throw new Error(errorMessage);
     }
-    return data;
+    return json;
   } catch (error) {
     throw error;
   }

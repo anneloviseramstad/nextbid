@@ -23,7 +23,7 @@
     <header class="p-4 font-medium bg-white shadow">
       <nav class="flex items-center justify-between relative max-w-6xl mx-auto">
         <a
-          class="font-['Abril_Fatface'] text-3xl sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+          class="font-['Abril_Fatface'] text-3xl sm:absolute sm:left-1/2 sm:-translate-x-1/2 hover:text-[#D54B01] transition-colors duration-200"
           href="../"
         >
           <p>Next<span class="text-[#D54B01]">Bid</span></p>
@@ -40,20 +40,30 @@
           class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex sm:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
         >
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:ml-4">
-            <li>
+            <li class="hover:text-[#D54B01] transition-colors duration-200">
               <a href="../about">
                 About Next<span class="text-[#D54B01]">Bid</span>
               </a>
             </li>
-            <li><a href="../support">Support</a></li>
+            <li class="hover:text-[#D54B01] transition-colors duration-200">
+              <a href="../support">Support</a>
+            </li>
           </ul>
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:mr-4">
             <li>
-              <a id="profileLink" href="../profile" style="display: none">
+              <a
+                class="hover:text-[#D54B01] transition-colors duration-200"
+                id="profileLink"
+                href="../profile"
+                style="display: none"
+              >
                 Welcome, <span id="username"></span>
               </a>
             </li>
-            <li class="logout-button" style="display: none">
+            <li
+              class="logout-button hover:text-[#D54B01] transition-colors duration-200"
+              style="display: none"
+            >
               <button id="logout-button">Logout</button>
             </li>
             <li id="loginLink"><a href="../login">Login</a></li>

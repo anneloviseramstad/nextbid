@@ -23,7 +23,7 @@
     <header class="p-4 font-medium bg-white drop-shadow-sm">
       <nav class="flex items-center justify-between relative max-w-6xl mx-auto">
         <a
-          class="font-['Abril_Fatface'] text-3xl md:absolute md:left-1/2 md:-translate-x-1/2"
+          class="font-['Abril_Fatface'] text-3xl md:absolute md:left-1/2 md:-translate-x-1/2 hover:text-[#D54B01] transition-colors duration-200"
           href="/"
         >
           Next<span class="text-[#D54B01]">Bid</span>
@@ -37,32 +37,45 @@
           </div>
         </label>
         <div
-          class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex md:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
+          class="absolute top-full left-0 w-full bg-white hidden peer-checked:flex flex-col gap-4 md:flex md:flex-row md:static md:justify-between md:items-center p-4 md:p-0 md:w-full md:bg-transparent z-10 shadow md:shadow-none"
         >
           <ul class="flex flex-col md:flex-row gap-4 md:gap-8 md:ml-4">
-            <li>
+            <li class="hover:text-[#D54B01] transition-colors duration-200">
               <a href="./about">
                 About Next<span class="text-[#D54B01]">Bid</span>
               </a>
             </li>
-            <li><a href="./support">Support</a></li>
+            <li class="hover:text-[#D54B01] transition-colors duration-200">
+              <a href="./support">Support</a>
+            </li>
           </ul>
-
           <ul class="flex flex-col md:flex-row gap-4 md:gap-8 md:mr-4">
             <li>
               <a
                 id="profileLink"
                 href="/profile/index.html"
                 style="display: none"
+                class="hover:text-[#D54B01] transition-colors duration-200"
               >
                 Welcome, <span id="username"></span>
               </a>
             </li>
-            <li class="logout-button" style="display: none">
+            <li
+              class="logout-button hover:text-[#D54B01] transition-colors duration-200"
+              style="display: none"
+            >
               <button id="logout-button">Logout</button>
             </li>
-            <li id="loginLink"><a href="./login/index.html">Login</a></li>
-            <li id="registerLink">
+            <li
+              id="loginLink"
+              class="hover:text-[#D54B01] transition-colors duration-200"
+            >
+              <a href="./login/index.html">Login</a>
+            </li>
+            <li
+              id="registerLink"
+              class="hover:text-[#D54B01] transition-colors duration-200"
+            >
               <a href="./register/index.html">Register</a>
             </li>
           </ul>
@@ -98,7 +111,7 @@
             </p>
             <a id="getStartedBtn" href="./register/index.html">
               <button
-                class="bg-[#D54B01] text-white px-4 py-2 mt-2 rounded-2xl"
+                class="bg-[#D54B01] text-white px-4 py-2 mt-2 rounded-2xl hover:scale-105 transition-transform duration-200"
               >
                 Get Started!
               </button>

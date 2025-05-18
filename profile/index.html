@@ -41,21 +41,31 @@
           class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex sm:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
         >
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:ml-4">
-            <li>
+            <li class="hover:text-[#D54B01] transition-colors duration-200">
               <a href="../about">
                 About Next<span class="text-[#D54B01]">Bid</span>
               </a>
             </li>
-            <li><a href="../support">Support</a></li>
+            <li class="hover:text-[#D54B01] transition-colors duration-200">
+              <a href="../support">Support</a>
+            </li>
           </ul>
 
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:mr-4">
             <li>
-              <a id="profileLink" href="../profile" style="display: none">
+              <a
+                class="hover:text-[#D54B01] transition-colors duration-200 border-b-2 border-[#D54B01]"
+                id="profileLink"
+                href="../profile"
+                style="display: none"
+              >
                 Welcome, <span id="username"></span>
               </a>
             </li>
-            <li class="logout-button" style="display: none">
+            <li
+              class="logout-button hover:text-[#D54B01] transition-colors duration-200"
+              style="display: none"
+            >
               <button id="logout-button">Logout</button>
             </li>
             <li id="loginLink"><a href="../login">Login</a></li>
@@ -66,7 +76,6 @@
         </div>
       </nav>
     </header>
-
     <main class="w-full max-w-7xl mx-auto">
       <div
         id="loader"
@@ -133,13 +142,13 @@
         ></div>
       </div>
       <div class="px-8 my-4">
-        <div class="flex flex-row items-center justify-between">
-          <h2 class="font-['Abril_Fatface'] text-2xl text-center mt-4">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <h2 class="font-['Abril_Fatface'] text-2xl text-center">
             - My Listings -
           </h2>
           <a
             href="../create/"
-            class="w-full md:w-auto flex justify-end items-start font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
+            class="w-full md:w-auto flex justify-center items-center md:justify-end items-start font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
           >
             + Add Listing
           </a>
