@@ -82,7 +82,8 @@ export async function displayProfile() {
                 "rounded",
                 "shadow",
                 "mb-4",
-                "bg-white"
+                "bg-white",
+                "text-sm"
               );
 
               bidElement.innerHTML = `

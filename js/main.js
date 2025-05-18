@@ -1,9 +1,19 @@
 import { router } from "./router.js";
 import { authenticationStatus } from "./ui/common/navigation.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  authenticationStatus();
-  router();
-});
+const loader = document.getElementById("loader");
 
+async function init() {
+  try {
+    loader.style.display = "flex"; // Sørg for at den vises
+    await authenticationStatus();
+    router();
+  } catch (error) {
+    console.error("Error during initialization", error);
+  } finally {
+    loader.style.display = "none"; // Skjul loader når alt er klart
+  }
+}
+
+document.addEventListener("DOMContentLoaded", init);
 window.addEventListener("popstate", router);
