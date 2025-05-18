@@ -26,7 +26,6 @@ export async function updateHandler(event) {
     await editProfile(username, profileData);
     messageContainer.innerHTML = `<p class="text-green-500">Profile updated!</p>`;
 
-    // Optional redirect
     setTimeout(() => {
       window.location.href = `/profile/index.html`;
     }, 1000);

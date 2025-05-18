@@ -1,6 +1,5 @@
 import { getListingById } from "../../api/listings/getListingById.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
-import { deleteListingHandler } from "./deleteListing.js";
 
 export async function displayListing(id) {
   if (!id) {
