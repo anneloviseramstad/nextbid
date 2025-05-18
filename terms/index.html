@@ -2,10 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Read the Terms and Conditions for using NextBid, our online auction platform. Learn about bidding rules, user responsibilities, and legal terms."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Terms & Conditions | NextBid</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="font-['Roboto'] text-[#454545]">
     <header class="p-4 font-medium bg-white shadow">
       <nav class="flex items-center justify-between relative">
         <a
@@ -14,7 +27,6 @@
         >
           <p>Next<span class="text-[#D54B01]">Bid</span></p>
         </a>
-
         <input type="checkbox" id="menu-toggle" class="hidden peer" />
         <label for="menu-toggle" class="sm:hidden cursor-pointer z-20">
           <div class="flex flex-col gap-1">
@@ -23,7 +35,6 @@
             <span class="w-6 h-0.5 bg-black"></span>
           </div>
         </label>
-
         <div
           class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex sm:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
         >
@@ -35,7 +46,6 @@
             </li>
             <li><a href="../support">Support</a></li>
           </ul>
-
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:mr-4">
             <li>
               <a id="profileLink" href="../profile" style="display: none">
@@ -53,14 +63,109 @@
         </div>
       </nav>
     </header>
+    <main>
+      <div class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold mb-6 text-center">Terms & Conditions</h1>
+        <p class="mb-4">
+          Welcome to <strong>NextBid</strong>. These Terms and Conditions
+          ("Terms") govern your access to and use of our website and services.
+          By accessing or using NextBid, you agree to comply with and be bound
+          by these Terms.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">1. Eligibility</h2>
+        <p class="mb-4">
+          You must be at least 18 years old and capable of entering into a
+          legally binding agreement to use our services.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">2. User Accounts</h2>
+        <p class="mb-4">
+          To participate in auctions, you must register for an account. You are
+          responsible for maintaining the confidentiality of your account
+          credentials and all activities under your account.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">
+          3. Bidding & Auction Rules
+        </h2>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>All bids are final and legally binding.</li>
+          <li>
+            NextBid reserves the right to cancel or retract bids at its
+            discretion.
+          </li>
+          <li>Bidders must honor the payment terms upon winning an auction.</li>
+          <li>
+            NextBid may set minimum bids, reserve prices, or auto-extend auction
+            times.
+          </li>
+        </ul>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">4. Payments & Fees</h2>
+        <p class="mb-4">
+          Users must complete payments within the specified time after winning
+          an auction. All fees and charges are disclosed before bidding and are
+          non-refundable unless stated otherwise.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">5. Prohibited Conduct</h2>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+          <li>Fraudulent bidding or shill bidding</li>
+          <li>Posting false or misleading information</li>
+          <li>Violating applicable laws or third-party rights</li>
+          <li>
+            Using bots, scripts, or automated tools to manipulate auctions
+          </li>
+        </ul>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">
+          6. Intellectual Property
+        </h2>
+        <p class="mb-4">
+          All content on NextBid, including logos, text, images, and software,
+          is the property of NextBid or its licensors and protected by
+          intellectual property laws.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">
+          7. Limitation of Liability
+        </h2>
+        <p class="mb-4">
+          NextBid is not liable for any indirect, incidental, or consequential
+          damages arising from your use of the platform. We do not guarantee
+          uninterrupted or error-free operation.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">8. Termination</h2>
+        <p class="mb-4">
+          We reserve the right to suspend or terminate your account at any time
+          for violations of these Terms or suspected fraudulent activity.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">9. Modifications</h2>
+        <p class="mb-4">
+          We may revise these Terms at any time. Continued use of the site after
+          changes are posted constitutes your acceptance of the revised Terms.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">10. Governing Law</h2>
+        <p class="mb-4">
+          These Terms are governed by and construed in accordance with the laws
+          of the jurisdiction where NextBid operates.
+        </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-2">
+          11. Contact Information
+        </h2>
+        <p class="mb-4">
+          If you have any questions or concerns about these Terms, please
+          contact us at: <br />
+          <a href="mailto:support@nextbid.com" class="text-blue-600 underline"
+            >support@nextbid.com</a
+          >
+        </p>
+        <p class="text-sm text-gray-500 mt-8">Last updated: May 12, 2025</p>
+      </div>
+    </main>
     <footer
-      class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8"
+      class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8 bg-[#F7F7F7] md:py-12"
     >
       <a class="font-['Abril_Fatface'] text-3xl" href="./">
         <p>Next<span class="text-[#D54B01]">Bid</span></p>
       </a>
-
-      <ul class="flex flex-col sm:flex-row justify-center gap-8 text-center">
+      <ul
+        class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 text-center"
+      >
         <li>
           <a href="../about"
             >About Next<span class="text-[#D54B01]">Bid</span></a
@@ -74,5 +179,6 @@
         &copy; 2025 NextBid Inc. All rights reserved.
       </p>
     </footer>
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>

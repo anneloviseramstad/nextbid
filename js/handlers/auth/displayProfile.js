@@ -68,8 +68,35 @@ export async function displayProfile() {
             "<p class='text-sm text-gray-500'>You haven't placed any bids yet.</p>";
         } else {
           uniqueListings.forEach((listing) => {
-            const card = createListingElement(listing);
-            myBidsContainer.appendChild(card);
+            // Finn brukerens bud på denne listen
+            const userBids = bidsResponse.data.filter(
+              (bid) => bid.listing.id === listing.id
+            );
+
+            userBids.forEach((bid) => {
+              const bidElement = document.createElement("div");
+              bidElement.classList.add(
+                "border",
+                "p-4",
+                "rounded",
+                "shadow",
+                "mb-4",
+                "bg-white"
+              );
+
+              // Legg til informasjon om budet
+              bidElement.innerHTML = `
+                <p><strong>Listing:</strong> <a href="/details/index.html?id=${
+                  listing.id
+                }" class="text-blue-500 underline">${listing.title}</a></p>
+                <p><strong>Bid amount:</strong> ${bid.amount}</p>
+                <p><strong>Bid date:</strong> ${new Date(
+                  bid.created
+                ).toLocaleString()}</p>
+              `;
+
+              myBidsContainer.appendChild(bidElement);
+            });
           });
         }
       }

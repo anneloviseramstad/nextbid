@@ -7,10 +7,13 @@ export async function getProfile(username) {
   }
 
   try {
-    const response = await fetch(`${API_AUCTION_PROFILES}/${username}`, {
-      method: "GET",
-      headers: headers(),
-    });
+    const response = await fetch(
+      `${API_AUCTION_PROFILES}/${username}?_listings=true&_bids=true`,
+      {
+        method: "GET",
+        headers: headers(),
+      }
+    );
 
     const json = await response.json();
 

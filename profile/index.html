@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | NextBid</title>
+    <title>Profile | NextBid</title>
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
@@ -64,7 +64,6 @@
     </header>
 
     <main>
-      <!-- Banner -->
       <div id="profileBanner" class="relative">
         <img
           id="bannerImage"
@@ -72,7 +71,6 @@
           class="h-32 w-full object-cover"
         />
 
-        <!-- Profilbilde – overlappes halvveis og plassert til venstre -->
         <div
           id="profileImageContainer"
           class="absolute bottom-0 left-8 transform translate-y-1/2"
@@ -84,8 +82,6 @@
           />
         </div>
       </div>
-
-      <!-- Innhold under profilbilde, venstrejustert -->
       <div id="profileTop" class="flex flex-col items-start mt-24 px-8">
         <div class="flex items-center gap-4">
           <h1 id="profileUsername" class="font-bold text-xl">Username</h1>
@@ -116,32 +112,12 @@
           </h2>
         </div>
       </div>
-
       <div class="px-8 my-4">
         <div
           id="myBidsContainer"
           class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
         ></div>
-        <div class="flex flex-row items-center justify-between">
-          <h2 class="font-['Abril_Fatface'] text-2xl text-center my-4">
-            - My Wins -
-          </h2>
-          <a
-            href="../create/"
-            class="w-full md:w-auto flex justify-end items-start"
-          >
-            <button
-              class="font-medium text-sm border-2 rounded-xl text-[#454545] px-4 py-2 my-2"
-            >
-              + Add Listing
-            </button>
-          </a>
-        </div>
       </div>
-      <div
-        id="winsContainer"
-        class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
-      ></div>
       <div class="px-8 my-4">
         <div class="flex flex-row items-center justify-between">
           <h2 class="font-['Abril_Fatface'] text-2xl text-center mt-4">
@@ -158,12 +134,22 @@
             </button>
           </a>
         </div>
-
         <div
           id="listingContainer"
           class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
         ></div>
       </div>
+      <div class="px-8 my-4">
+        <div class="flex flex-row items-center justify-between">
+          <h2 class="font-['Abril_Fatface'] text-2xl text-center my-4">
+            - My Wins -
+          </h2>
+        </div>
+      </div>
+      <div
+        id="winsContainer"
+        class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-2"
+      ></div>
     </main>
     <footer
       class="mt-20 p-4 font-medium text-md flex flex-col items-center gap-8 bg-[#F7F7F7] md:py-12"
@@ -171,7 +157,6 @@
       <a class="font-['Abril_Fatface'] text-3xl" href="./">
         <p>Next<span class="text-[#D54B01]">Bid</span></p>
       </a>
-
       <ul
         class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8 text-center"
       >

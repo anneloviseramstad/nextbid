@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Welcome to NextBid – the leading online auction platform. Discover, bid, and win items from sellers around the world."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | NextBid</title>
     <!-- Tailwind via CDN -->
@@ -23,7 +27,6 @@
         >
           Next<span class="text-[#D54B01]">Bid</span>
         </a>
-
         <input type="checkbox" id="menu-toggle" class="hidden peer" />
         <label for="menu-toggle" class="md:hidden cursor-pointer z-20">
           <div class="flex flex-col gap-1">
@@ -32,7 +35,6 @@
             <span class="w-6 h-0.5 bg-black"></span>
           </div>
         </label>
-
         <div
           class="absolute top-full left-0 w-full bg-white flex-col sm:flex-row hidden peer-checked:flex md:flex sm:static sm:justify-between sm:items-center p-4 sm:p-0 sm:w-full sm:bg-transparent z-10 shadow sm:shadow-none"
         >
@@ -66,9 +68,7 @@
         </div>
       </nav>
     </header>
-
     <main>
-      <!-- Hero Section  -->
       <section class="bg-[#F7F7F7] px-2 md:px-20">
         <div
           class="flex items-center justify-between gap-8 max-w-6xl mx-auto py-8 md:py-12"
@@ -94,7 +94,6 @@
               </button>
             </a>
           </div>
-
           <div class="hidden md:block relative w-full md:w-1/2 max-w-sm my-4">
             <div
               class="absolute top-4 left-4 w-full h-full bg-[#3b240b] z-0"
@@ -107,15 +106,11 @@
           </div>
         </div>
       </section>
-
-      <!-- Grid Section -->
       <section class="flex flex-col items-center px-4">
         <div class="w-full max-w-6xl">
           <h2 class="text-center font-['Abril_Fatface'] text-xl py-8">
             - Explore the Auction Floor -
           </h2>
-
-          <!-- Filter Section -->
           <div
             class="flex flex-col sm:flex-row gap-4 md:gap-8 justify-between mb-8"
           >
@@ -132,7 +127,6 @@
                 id="searchInput"
                 placeholder="Search by title..."
               />
-
               <select
                 id="sortByTag"
                 class="bg-[#F7F7F7] py-2 px-2 md:px-4 rounded-lg text-sm"
@@ -157,8 +151,6 @@
               >
             </div>
           </div>
-
-          <!-- Grid -->
           <div>
             <div
               id="listingsContainer"
