@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="List your items for auction on NextBid. Set your starting price, upload photos, and reach a global bidding audience."
+      content="Update your profile on NextBid. Edit bio, avatar, and banner images to represent yourself and attract more bidders."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="../assets/favicon.png" />
-    <title>Create Listing | NextBid</title>
+    <title>Update Profile | NextBid</title>
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
@@ -47,7 +47,6 @@
             </li>
             <li><a href="../support">Support</a></li>
           </ul>
-
           <ul class="flex flex-col sm:flex-row gap-4 sm:gap-8 sm:mr-4">
             <li>
               <a id="profileLink" href="../profile" style="display: none">
@@ -77,60 +76,44 @@
 
       <div class="my-12">
         <h1 class="font-['Abril_Fatface'] text-2xl text-center">
-          Create New Listing
+          Update Profile
         </h1>
         <form
-          id="createForm"
+          id="updateForm"
           class="p-4 flex flex-col gap-4 items-center text-sm font-medium mt-4"
         >
-          <label for="title">Title</label>
+          <label for="title">Bio</label>
           <input
             class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
             type="text"
-            id="title"
-            name="title"
-            placeholder="What are you selling?"
+            id="bio"
+            name="bio"
+            placeholder="Write something about yourself!"
             required
           />
-          <label for="description">Description</label>
+          <label for="description">Avatar Url</label>
           <input
             class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
             type="text"
-            id="description"
-            name="description"
-            placeholder="Describe Your Item"
+            id="avatar-url"
+            name="avatar-url"
+            placeholder="Avatar Url here"
             required
           />
-          <label for="image">Image</label>
+          <label for="image">Banner Url</label>
           <input
             class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
             type="text"
-            id="image"
-            name="image"
-            placeholder="Image URL"
-            required
-          />
-          <label for="tags">Tags</label>
-          <input
-            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
-            type="text"
-            id="tags"
-            name="tags"
-            placeholder="Tags"
-          />
-          <label for="endsAt">Ends at</label>
-          <input
-            class="w-full max-w-md text-sm p-2.5 bg-gray-100 rounded-sm text-gray-400 font-normal"
-            type="date"
-            id="endsAt"
-            name="endsAt"
+            id="banner-url"
+            name="banner-url"
+            placeholder="Banner Url here"
             required
           />
           <button
             class="bg-[#D54B01] text-white p-2.5 my-2 w-full max-w-md rounded-sm"
             type="submit"
           >
-            CREATE LISTING
+            UPDATE PROFILE
           </button>
           <div id="message-container"></div>
         </form>

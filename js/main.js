@@ -5,13 +5,13 @@ const loader = document.getElementById("loader");
 
 async function init() {
   try {
-    loader.style.display = "flex"; // Sørg for at den vises
+    loader.style.display = "flex";
     await authenticationStatus();
     router();
   } catch (error) {
     console.error("Error during initialization", error);
   } finally {
-    loader.style.display = "none"; // Skjul loader når alt er klart
+    loader.style.display = "none";
   }
 }
 

@@ -69,7 +69,6 @@ export async function displayProfile() {
             "<p class='text-sm text-gray-500'>You haven't placed any bids yet.</p>";
         } else {
           uniqueListings.forEach((listing) => {
-            // Finn brukerens bud på denne listen
             const userBids = bidsResponse.data.filter(
               (bid) => bid.listing.id === listing.id
             );
