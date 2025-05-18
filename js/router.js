@@ -18,6 +18,10 @@ const routes = {
   update: initUpdateProfile,
 };
 
+/**
+ * Routes to the appropriate page initializer based on the current URL path.
+ * Defaults to the home page if no specific route matches.
+ */
 export function router() {
   const pathname = window.location.pathname;
   const page = pathname.split("/")[1];

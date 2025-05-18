@@ -1,6 +1,13 @@
 import { createListing } from "../../api/listings/createListing.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
+/**
+ * Handles the form submission to create a new listing.
+ * Collects form data, processes it, and calls createListing API.
+ * Shows success or error messages and redirects on success.
+ *
+ * @param {Event} event - The form submission event.
+ */
 export async function createListingHandler(event) {
   event.preventDefault();
 

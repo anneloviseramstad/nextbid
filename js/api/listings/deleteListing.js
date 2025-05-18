@@ -1,6 +1,13 @@
 import { API_AUCTION_LISTINGS } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
+/**
+ * Deletes an auction listing by its ID.
+ *
+ * @param {string} id - The ID of the listing to delete.
+ * @returns {Promise<void>} Resolves if the deletion is successful.
+ * @throws {Error} If the ID is missing or the request fails.
+ */
 export async function deleteListing(id) {
   if (!id) {
     throw new Error("ID is required.");

@@ -1,7 +1,13 @@
 import { deleteListing } from "../../api/listings/deleteListing.js";
 
+/**
+ * Deletes a listing after user confirmation.
+ * Alerts user on success or failure and redirects to profile page.
+ *
+ * @param {string} id - The ID of the listing to delete.
+ */
 export async function deleteListingHandler(id) {
-  const listingId = event.target.dataset.listingId;
+  const listingId = id;
 
   if (!listingId) {
     console.error("Listing ID is required.");

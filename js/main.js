@@ -3,6 +3,10 @@ import { authenticationStatus } from "./ui/common/navigation.js";
 
 const loader = document.getElementById("loader");
 
+/**
+ * Initializes the app by showing loader, checking authentication status,
+ * and routing to the correct page. Hides loader after completion.
+ */
 async function init() {
   try {
     loader.style.display = "flex";

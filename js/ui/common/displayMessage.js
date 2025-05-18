@@ -1,3 +1,12 @@
+/**
+ * Displays a styled alert message inside a container element.
+ * Removes any existing alert messages before adding the new one.
+ *
+ * @param {string|Element} container - Selector or DOM element to contain the message.
+ * @param {"info"|"success"|"warning"|"error"} [type="info"] - Type of alert for styling.
+ * @param {string} [message=""] - The message text to display.
+ * @throws Will throw an error if the container is invalid or not found.
+ */
 export function displayMessage(container, type = "info", message = "") {
   const parent =
     typeof container === "string"
@@ -12,7 +21,6 @@ export function displayMessage(container, type = "info", message = "") {
 
   const div = document.createElement("div");
 
-  
   const baseStyles = "custom-alert rounded-md p-3 text-sm mb-2";
   const typeStyles = {
     info: "bg-blue-100 text-blue-800 border border-blue-300",

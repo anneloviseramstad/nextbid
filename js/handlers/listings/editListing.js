@@ -1,5 +1,10 @@
 import { editListing } from "../../api/listings/editListing.js";
 
+/**
+ * Handles form submission to edit a listing.
+ * @param {Event} event - The form submit event.
+ * @param {string} id - The ID of the listing to edit.
+ */
 export async function editListingHandler(event, id) {
   event.preventDefault();
 

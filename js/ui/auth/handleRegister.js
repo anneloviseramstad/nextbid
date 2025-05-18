@@ -1,6 +1,13 @@
 import { registerUser } from "../../api/auth/register.js";
 import { displayMessage } from "../common/displayMessage.js";
 
+/**
+ * Handles user registration form submission.
+ * Collects form data, formats it, and calls the registration API.
+ * On success, redirects to the login page; on failure, shows an error message.
+ *
+ * @param {Event} event - The form submit event.
+ */
 export async function handleRegister(event) {
   event.preventDefault();
 

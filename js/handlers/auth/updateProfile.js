@@ -1,6 +1,18 @@
 import { retrieveUsername } from "../../utils/storage.js";
 import { editProfile } from "../../api/profile/editProfile.js";
 
+/**
+ * Handles the profile update form submission.
+ *
+ * Prevents the default form submission, collects updated bio, avatar URL, and banner URL
+ * from the form fields, and sends the data to the API using `editProfile`.
+ *
+ * On success, displays a success message and redirects the user to the profile page.
+ * On failure, displays an error message.
+ *
+ * @param {Event} event - The form submission event.
+ * @returns {Promise<void>}
+ */
 export async function updateHandler(event) {
   event.preventDefault();
   const username = retrieveUsername();

@@ -1,6 +1,12 @@
 import { getListingById } from "../../api/listings/getListingById.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
+/**
+ * Fetches and displays listing details and recent bids by listing ID.
+ * Redirects to homepage if no ID is provided.
+ *
+ * @param {string} id - The ID of the listing to display.
+ */
 export async function displayListing(id) {
   if (!id) {
     window.location.href = "/index.html";

@@ -1,3 +1,18 @@
+/**
+ * Creates a DOM element representing a single auction listing with dynamic countdown,
+ * bid display, input form, and link to details.
+ *
+ * @param {Object} listing - The listing data object.
+ * @param {string} listing.id - The ID of the listing.
+ * @param {string} listing.title - The title of the listing.
+ * @param {string} listing.description - The description of the listing.
+ * @param {Array} listing.media - Array of media objects (with `url` and optional `alt`).
+ * @param {Object} listing.seller - The seller object with a `name` property.
+ * @param {string} listing.created - The ISO date string when the listing was created.
+ * @param {Array} listing.bids - Array of bid objects, each with `amount`, `created`, and `bidder.name`.
+ * @param {string} listing.endsAt - The ISO date string when the listing ends.
+ * @returns {HTMLDivElement} The fully constructed listing DOM element.
+ */
 export function createListingElement(listing) {
   const { id, title, description, media, seller, created, bids, endsAt } =
     listing;
@@ -17,7 +32,6 @@ export function createListingElement(listing) {
 
   const contentWrapper = document.createElement("div");
   contentWrapper.classList.add("flex", "flex-col", "flex-grow");
-
 
   const endsAtDate = new Date(endsAt);
   const endsAtElement = document.createElement("p");
@@ -41,7 +55,6 @@ export function createListingElement(listing) {
 
   updateCountdown();
   interval = setInterval(updateCountdown, 1000);
-
 
   if (media?.length > 0) {
     const imageContainer = document.createElement("div");
@@ -75,11 +88,9 @@ export function createListingElement(listing) {
     imageContainer.appendChild(endsAtElement);
     contentWrapper.appendChild(imageContainer);
   } else {
-  
     endsAtElement.classList.add("text-sm", "px-2", "py-1", "text-gray-600");
     contentWrapper.appendChild(endsAtElement);
   }
-
 
   const heading = document.createElement("h5");
   heading.textContent = title;
@@ -116,7 +127,6 @@ export function createListingElement(listing) {
   );
   contentWrapper.appendChild(descriptionP);
 
-
   const bidsHeading = document.createElement("h6");
   bidsHeading.textContent = "Recent bids:";
   bidsHeading.classList.add("font-semibold", "px-2", "mt-2", "text-sm");
@@ -152,7 +162,6 @@ export function createListingElement(listing) {
     bidsContainer.appendChild(noBids);
   }
   contentWrapper.appendChild(bidsContainer);
-
 
   const hypeContainer = document.createElement("div");
   hypeContainer.classList.add(
@@ -194,7 +203,6 @@ export function createListingElement(listing) {
   hypeContainer.appendChild(bidInput);
   hypeContainer.appendChild(bidButton);
   contentWrapper.appendChild(hypeContainer);
-
 
   const detailLink = document.createElement("a");
   detailLink.href = `/details/index.html?id=${id}`;

@@ -1,6 +1,14 @@
 import { API_AUCTION_PROFILES } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
+/**
+ * Fetches a user's profile by username.
+ * Includes the user's listings and bids in the response.
+ *
+ * @param {string} username - The username of the profile to retrieve.
+ * @returns {Promise<Object>} The user's profile data from the API.
+ * @throws {Error} If the username is missing or the request fails.
+ */
 export async function getProfile(username) {
   if (!username) {
     throw new Error("Missing username");

@@ -7,6 +7,19 @@ import { deleteListingHandler } from "../listings/deleteListing.js";
 import { bidsByUser } from "../../api/listings/bidsByUser.js";
 import { winsByUser } from "../../api/listings/winsByUser.js";
 
+/**
+ * Asynchronously renders the user's profile, including their listings, bids, and wins.
+ *
+ * Fetches profile data based on the current logged-in username, and updates the DOM with:
+ * - Profile information (username, avatar, bio, credits)
+ * - Listings created by the user (with Edit and Delete options)
+ * - Bids the user has placed
+ * - Listings the user has won
+ *
+ * Handles and displays fallback messages if no listings, bids, or wins are found.
+ *
+ * @returns {Promise<void>}
+ */
 export async function displayProfile() {
   const username = retrieveUsername();
 

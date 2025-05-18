@@ -2,6 +2,13 @@ import { loginUser } from "../../api/auth/login.js";
 import { displayMessage } from "../common/displayMessage.js";
 import { storeUserToken, storeUsername } from "../../utils/storage.js";
 
+/**
+ * Handles the login form submission.
+ * Prevents default form action, sends login data to the server,
+ * stores the received token and username, and redirects on success.
+ *
+ * @param {Event} event - The submit event from the login form.
+ */
 export async function handleLogin(event) {
   event.preventDefault();
 

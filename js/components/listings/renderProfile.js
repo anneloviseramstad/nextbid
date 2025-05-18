@@ -1,3 +1,17 @@
+/**
+ * Renders user profile information into the DOM.
+ * Populates banner, avatar, username, bio, and credits from user data.
+ *
+ * @param {Object} userData - The user data object.
+ * @param {Object} [userData.banner] - The banner image object.
+ * @param {string} [userData.banner.url] - The banner image URL.
+ * @param {Object} [userData.avatar] - The avatar image object.
+ * @param {string} [userData.avatar.url] - The avatar image URL.
+ * @param {string} userData.name - The username.
+ * @param {string} [userData.bio] - The user bio.
+ * @param {number} [userData.credits] - The user's credit balance.
+ * @returns {void}
+ */
 export async function renderProfile(userData) {
   if (!userData) {
     console.error("userData is null or udefined:", userData);

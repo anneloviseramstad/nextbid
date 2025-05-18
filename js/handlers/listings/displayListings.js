@@ -4,6 +4,10 @@ import { filterListings } from "./filterListings.js";
 import { createListingElement } from "../../components/listings/listingElement.js";
 import { attachBidHandlers } from "../bids/attachBidHandlers.js";
 
+/**
+ * Fetches all listings, filters them, and displays in the container.
+ * Also attaches bid handlers to the displayed listings.
+ */
 export async function displayListings() {
   const container = document.querySelector("#listingsContainer");
 

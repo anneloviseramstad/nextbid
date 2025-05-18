@@ -1,6 +1,14 @@
 import { API_AUCTION_PROFILES } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
+/**
+ * Fetches all auction listings created by a specific user.
+ * Includes related bids and seller information.
+ *
+ * @param {string} username - The username whose listings to retrieve.
+ * @returns {Promise<Object>} The user's listings data from the API.
+ * @throws {Error} If the request fails.
+ */
 export async function listingsByUser(username) {
   try {
     const response = await fetch(

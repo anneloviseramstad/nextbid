@@ -1,3 +1,8 @@
+/**
+ * Filters and sorts listings based on user inputs for tag, title, and seller name.
+ * @param {Object[]|Object} listings - Array of listing objects or an object containing a data array.
+ * @returns {Object[]} Filtered array of listings.
+ */
 export function filterListings(listings) {
   const listingData = listings?.data || listings;
   const sortByTag = document.getElementById("sortByTag").value;

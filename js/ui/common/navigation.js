@@ -7,6 +7,12 @@ import {
 import { logOut } from "../auth/handleLogout.js";
 import { getProfile } from "../../api/profile/getProfile.js";
 
+/**
+ * Updates the navigation UI based on the current user's authentication status.
+ * Fetches user profile data to display username and available credits.
+ *
+ * @returns {Promise<void>}
+ */
 export async function authenticationStatus() {
   updateNavigation();
 
@@ -37,6 +43,10 @@ export async function authenticationStatus() {
   }
 }
 
+/**
+ * Updates navigation elements based on user authentication status.
+ * Shows/hides links and buttons accordingly, and sets up logout behavior.
+ */
 export function updateNavigation() {
   const loginLink = document.querySelector("#loginLink");
   const registerLink = document.querySelector("#registerLink");

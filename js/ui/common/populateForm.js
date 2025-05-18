@@ -1,5 +1,9 @@
 import { getListingById } from "../../api/listings/getListingById.js";
 
+/**
+ * Fetches listing data by ID and fills the edit form fields with it.
+ * @param {string} id - The ID of the listing to edit.
+ */
 export async function populateEditForm(id) {
   try {
     const listing = await getListingById(id);

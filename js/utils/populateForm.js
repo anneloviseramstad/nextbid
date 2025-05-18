@@ -1,3 +1,7 @@
+/**
+ * Populates the registration form fields with provided user data.
+ * @param {Object} data - User data to fill the form.
+ * */
 export function populateForm(data) {
   const form = document.querySelector("#registerForm");
 
