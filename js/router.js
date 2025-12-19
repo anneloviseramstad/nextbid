@@ -6,6 +6,9 @@ import { initCreate } from "./pages/common/initCreate.js";
 import { initProfile } from "./pages/common/initProfile.js";
 import { initEdit } from "./pages/common/initEdit.js";
 import { initUpdateProfile } from "./pages/common/initUpdateProfile.js";
+import { handleHeaderScroll } from "./components/handleHeaderScroll.js";
+
+handleHeaderScroll();
 
 const routes = {
   "": initHome,
